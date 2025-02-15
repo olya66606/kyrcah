@@ -1,10 +1,11 @@
 body{
-    background-color: rgb(129, 89, 56);
+  background-color: rgba(36, 36, 36, 0.466);
 }
-.obvodka{
+/* .obvodka{
   border: 1px solid white;
-  box-shadow: 10px 10px 10px white;
-}
+  box-shadow: 10px 10px 10px 10px white;
+  border-radius: 254px;
+} */
 .knopka{
   width: 70px;
   height: 50px;
@@ -12,6 +13,33 @@ body{
 .navi{
   background-color: black;
 }
+.hachi-maru-pop-regular, li,ul,p,h1,h2{
+  font-family: "Hachi Maru Pop", serif;
+  font-weight: 400;
+  font-style: normal; 
+  font-weight: bold;
+  color: black;
+}
+.zadnik{
+  background-image: url(img/zadnik.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%; 
+ 
+}
+nav{
+background-color:#bb4248be;
+}
+img{
+  width: 300px;
+  height: 900px;
+  box-shadow:128px 93px 179px -72px white;
+  border-radius: 100%;
+}
+/* .btn:hover{
+  color: rgb(228, 34, 34);
+} */
+
 /* 
 @import url('https://fonts.googleapis.com/css?family=Sarala:700|Exo+2:300');
 
