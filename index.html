@@ -11,54 +11,95 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap" rel="stylesheet">
-    <title>Kyrcah cafe</title>
+    <title> cafe</title>
 </head>
 <body>
-  
-    <nav class="navbar bg-body-tertiary fixed-top bg-transparent">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"><img src="" alt="">тут будет лого</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasnavbar" aria-controls="offcanvasnavbar">
+   
+    <nav class="navbar fixed-top bg-body-tertiary ">
+      <h1></h1><h1>Добро пожаловать в Гриффендор</h1>
+          <button class="knopka navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasnavbar" aria-controls="offcanvasnavbar">
             <span class="navbar-toggler-icon"></span>
-          </button>
+          </button> 
           <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasnavbar" aria-labelledby="offcanvasnavbarlabel">
             <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasnavbarlabel">offcanvas</h5>
+              <h5 class="offcanvas-title" id="offcanvasnavbarlabel">Главное</h5>
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="закрыть"></button>
             </div>
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">главная</a>
+                  <a class="nav-link active" aria-current="page" href="#">Меню</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">ссылка</a>
+                  <a class="nav-link" href="#">Команда</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    выпадающий список 
+                    Чего желаете?
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">действие</a></li>
-                    <li><a class="dropdown-item" href="#">другое действие</a></li>
+                    <li><a class="dropdown-item" href="#">Написать нам</a></li>
+                    <li><a class="dropdown-item" href="#">Заказать доставку</a></li>
                     <li>
                       <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item" href="#">что-то еще здесь</a></li>
+                    <li><a class="dropdown-item" href="#">Оставить отзыв</a></li>
                   </ul>
                 </li>
               </ul>
+              <p></p>
               <form class="d-flex mt-3" role="search">
-                <input class="form-control me-2" type="search" placeholder="поиск" aria-label="поиск">
-                <button class="btn btn-outline-success" type="submit">поиск</button>
+                <input class="form-control me-2" type="search" placeholder="поиск интересного" aria-label="поиск">
+                <button class="btn btn-outline-success" type="submit">Найдем</button>
               </form>
             </div>
           </div>
         </div>
       </nav>
 
-
-    <div class="blok1">
+      <div id="carouselExampleInterval" class="slide vh-100" data-bs-ride="carousel">
+        <div class="  carousel-inner h-100">
+          <div class=" obvodka carousel-item active  h-100" data-bs-interval="10000">
+            <div class="obvodka">
+            <img src="img/barista.png" class="d-block w-50 h-80" alt="">
+          </div>
+          </div>
+          <div class="carousel-item h-100"  data-bs-interval="2000">
+            <div class="obvodka">
+            <img src="img/barista2.png" class="d-block w-50 h-80" alt="">
+          </div>
+          </div>
+          <div class="carousel-item h-100">
+            <div class="obvodka">
+            <img src="img/barista3.png" class="d-block w-50 h-80" alt="">
+          </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="wrapper">
+        <div class="card">
+          <div class="front">
+            <h1>Signature</h1>
+            <p>7.7 deck<span>2018</span></p>
+            <p class="price">$ 89.00</p>
+          </div>
+          <div class="right">
+            <h2>Signature</h2>
+            <ul>
+              <li>Width 7.7"</li>
+              <li>Length  31.75"</li>
+              <li>Wheelbase 14"</li>
+              <li>Nose  6.875"</li>
+              <li>Tail  6.25"</li>
+            </ul>
+            <button>Add to cart, yo</button>
+          </div>
+        </div>
+        <div class="img-wrapper">
+             <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/577128/deck.png' alt=''>    
+        </div>
+      </div> -->
+    <!-- <div class="blok1">
         <div class="block1-left">текст</div>
         <div class="block1-right">красивое видео готовки</div>
     </div>
@@ -86,7 +127,7 @@
    </div>
 
 
-    <footer>хуй</footer>
+    <footer></footer> -->
 
     
 </body>
