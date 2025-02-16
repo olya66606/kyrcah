@@ -10,28 +10,26 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
 
    
     <title> cafe</title>
 </head>
 <body>
    
-    <nav class="navbar sticky-top">
-      <p></p><figure class="text-center">
-        <blockquote class="blockquote">
-          <h2 class="hachi-maru-pop-regular">Добро пожаловать в кофейню Гриффиндор</h2>
-        </blockquote>
-        <figcaption class="blockquote-footer hachi-maru-pop-regular text-black">
-          Торжественно клянусь, что замышляю щалость и только шалость 
-        </figcaption>
-      </figure>
+    <nav class="navbar sticky-top flex"> 
+     <img class="img" src="img/logo-Photoroom.png" alt="">
+      <a class="nav-link hachi-maru-pop-regular" aria-current="page" href="#">Главная</a>
+      <a class="nav-link  hachi-maru-pop-regular" href="#">О нас</a>
+       <a class="nav-link  hachi-maru-pop-regular" href="#">Команда</a>
+        <a class="nav-link hachi-maru-pop-regular" href="#">Цена</a>
+        <i class="bi bi-people-fill " style="font-size: 3rem;"></i>
           <button class="knopka navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasnavbar" aria-controls="offcanvasnavbar">
             <span class="navbar-toggler-icon"></span>
           </button> 
           <div class="offcanvas offcanvas-end zadnik" tabindex="-1" id="offcanvasnavbar" aria-labelledby="offcanvasnavbarlabel">
             <div class="offcanvas-header ">
-              <h5 class="offcanvas-title hachi-maru-pop-regular " id="offcanvasnavbarlabel">Главное</h5>
+              <h5 class="offcanvas-title hachi-maru-pop-regular " id="offcanvasnavbarlabel">Дополнительное</h5>
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="закрыть"></button>
             </div>
             <div class="offcanvas-body">
@@ -40,8 +38,9 @@
                   <a class="nav-link active" aria-current="page" href="#">Меню</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Команда</a>
+                  <a class="nav-link" href="#">Как нас найти-></a>
                 </li>
+                
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Чего желаете?
@@ -66,23 +65,148 @@
         </div>
       </nav>
 
-      <div id="carouselExampleInterval" class="m-2 slide vh-100" data-bs-ride="carousel">
+
+
+
+
+
+
+
+
+
+      <div id="carouselExampleInterval" class=" slide vh-100" data-bs-ride="carousel">
         <div class="  carousel-inner h-100">
           <div class="carousel-item active  h-100" data-bs-interval="10000">
             <div class="obvodka">
-            <img src="img/barista.png" class="d-block w-50 h-80" alt="">
+              <img src="img/barista.png" class="d-block fotki" alt="">
+              <h1 class="info">Бариста Генри <br><br>
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      Рабочая информация баристы
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse text" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Приятный и трудолюбивый бариста с 3-летним опытом работы в кафе Бухареста.
+                       Отличные навыки работы с клиентами, знание сочетаний кофе и пищи, а также опыт управления запасами. 
+                       Работал с 40+ международными кофейными зернами. 100% своевременная посещаемость за последний год. 
+                      Хочу использовать навыки обслуживания клиентов и кофе, чтобы взять на себя роль начальника смены в Latebucks.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                     Интересный факт
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Любитель кофе, который хочет начать свой профессиональный путь как бариста в Latebucks в центре Праги. 
+                      Страстно прилагаю усилия по обеспечению счастливых и довольных клиентов. 
+                      Два лета работал в кафе Бухареста, в том числе разносил кофе на мероприятиях. Продал 25% ассортимента посетителям кафе.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                      Ключевые навыки
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Высокие знания о кофе. Знаю как правильно хранить зерна, которое должно быть прокаливания, степень помола и т. д. <br>
+                      Умею приручить кофеварку, разбираюсь в технических особенностях. <br>
+                      Высокая коммуникабельность с клиентами и командой.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          </div>
-          <div class="carousel-item h-100"  data-bs-interval="2000">
-            <div class="obvodka">
-            <img src="img/barista2.png" class="d-block w-50 h-80" alt="">
-          </div>
-          </div>
-          <div class="carousel-item h-100">
-            <div class="obvodka">
-            <img src="img/barista3.png" class="d-block w-50 h-80" alt="">
-          </div>
-          </div>
+                <div class="carousel-item h-100"  data-bs-interval="2000">
+                  <div class="obvodka">
+                      <img src="img/barista2.png" class="d-block fotki" alt="">
+                      <h1 class="info">Бариста Элисон <br><br>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                Рабочая информация баристы
+                              </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse text" data-bs-parent="#accordionFlushExample">
+                              <div class="accordion-body">5-летний специалист по приготовлению кофе. Прекрасно разбираюсь в сортах зерен,
+                                могу абсолютно точно определить степень прожарки, вид помола и способ заварки, сделав только один глоток напитка.</div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                               Интересный факт
+                              </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                              <div class="accordion-body">Любитель кофе, который хочет начать свой профессиональный путь как бариста в Latebucks в центре Праги. 
+                                Страстно прилагаю усилия по обеспечению счастливых и довольных клиентов. 
+                                Два лета работал в кафе Бухареста, в том числе разносил кофе на мероприятиях. Продал 25% ассортимента посетителям кафе.</div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                Ключевые навыки
+                              </button>
+                            </h2>
+                            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                              <div class="accordion-body">Высокие знания о кофе. Знаю как правильно хранить зерна, которое должно быть прокаливания, степень помола и т. д. <br>
+                                Умею приручить кофеварку, разбираюсь в технических особенностях. <br>
+                                Высокая коммуникабельность с клиентами и командой.</div>
+                            </div>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+                        <div class="carousel-item h-100">
+                            <div class="obvodka">
+                             <img src="img/barista3.png" class="d-block fotki" alt="">
+                             <h1 class="info">Бариста Джереми <br><br>
+                              <div class="accordion accordion-flush" id="accordionFlushExample">
+                                <div class="accordion-item">
+                                  <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                      Рабочая информация баристы
+                                    </button>
+                                  </h2>
+                                  <div id="flush-collapseOne" class="accordion-collapse collapse text" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">5-летний специалист по приготовлению кофе. Прекрасно разбираюсь в сортах зерен,
+                                      могу абсолютно точно определить степень прожарки, вид помола и способ заварки, сделав только один глоток напитка.</div>
+                                  </div>
+                                </div>
+                                <div class="accordion-item">
+                                  <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                     Интересный факт
+                                    </button>
+                                  </h2>
+                                  <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Любитель кофе, который хочет начать свой профессиональный путь как бариста в Latebucks в центре Праги. 
+                                      Страстно прилагаю усилия по обеспечению счастливых и довольных клиентов. 
+                                      Два лета работал в кафе Бухареста, в том числе разносил кофе на мероприятиях. Продал 25% ассортимента посетителям кафе.</div>
+                                  </div>
+                                </div>
+                                <div class="accordion-item">
+                                  <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                      Ключевые навыки
+                                    </button>
+                                  </h2>
+                                  <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Высокие знания о кофе. Знаю как правильно хранить зерна, которое должно быть прокаливания, степень помола и т. д. <br>
+                                      Умею приручить кофеварку, разбираюсь в технических особенностях. <br>
+                                      Высокая коммуникабельность с клиентами и командой.</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
         </div>
       </div>
       <!-- <div class="wrapper">
@@ -141,7 +265,6 @@
     
 </body>
 </html>
-
 
 <script src="vue.global.js"></script>
 <script src="bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>

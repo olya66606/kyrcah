@@ -1,11 +1,12 @@
-body{
-  background-color: rgba(36, 36, 36, 0.466);
+nav{
+  background-color: rgba(160, 77, 38, 0.705);
 }
-/* .obvodka{
-  border: 1px solid white;
-  box-shadow: 10px 10px 10px 10px white;
-  border-radius: 254px;
-} */
+
+
+.flex{
+  display: flex;
+  justify-content: space-between;
+}
 .knopka{
   width: 70px;
   height: 50px;
@@ -13,12 +14,16 @@ body{
 .navi{
   background-color: black;
 }
-.hachi-maru-pop-regular, li,ul,p,h1,h2{
-  font-family: "Hachi Maru Pop", serif;
+.hachi-maru-pop-regular, li,ul,p,h1,h2, .nav-link{
+  font-family: "Pangolin", serif;
   font-weight: 400;
-  font-style: normal; 
-  font-weight: bold;
+  font-style: normal;
+  font-size: 30px;
   color: black;
+}
+.img{
+  width: 110px;
+  height: 90px;
 }
 .zadnik{
   background-image: url(img/zadnik.png);
@@ -27,18 +32,37 @@ body{
   height: 100%; 
  
 }
-nav{
-background-color:#bb4248be;
-}
+
 img{
   width: 300px;
   height: 900px;
-  box-shadow:128px 93px 179px -72px white;
-  border-radius: 100%;
+  border-radius: 80px;
 }
-/* .btn:hover{
-  color: rgb(228, 34, 34);
-} */
+.accordion, .accordion-button, .accordion-body{
+  border-radius: 50px;
+  font-size: 20px;
+}
+.fotki{
+  width: 700px;
+  height: 700px;
+  margin: 10px 168px
+}
+.obvodka{
+background-image: url(img/freepik__upload__46114.png);
+background-repeat: no-repeat;
+background-size: cover;
+display: flex;
+
+}
+.info{
+  padding: 90px;
+  font-size: 30px;
+
+}
+.text{
+  font-size: 20px; 
+}
+
 
 /* 
 @import url('https://fonts.googleapis.com/css?family=Sarala:700|Exo+2:300');
