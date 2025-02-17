@@ -66,6 +66,8 @@ border: 8px solid rgba(247, 179, 77, 0.842);
 main{
 width: 100%;
 background-image: url(img/freepik__adjust__5640.png);
+/* background-image: url(img/freepik__upload__46114.png); */
+/* background-color: rgba(153, 77, 41, 0.842); */
 background-repeat: no-repeat;
 background-size: cover;
 display: flex;
@@ -78,6 +80,7 @@ border: 8px solid rgba(247, 179, 77, 0.76);
   margin: 397px 100px;
   width: 600px;
   height: 600px;
+
 }
 
 .bymaga{
@@ -86,15 +89,26 @@ border: 8px solid rgba(247, 179, 77, 0.76);
   height: 600px;
 }
 .infirmation{
-  margin:-549px 268px;
+  margin: -649px 268px;
   width: 400px;
   height: 100px;
+  line-height: 46px;
 }
-.infirmation>p, h1{
- 
-  font-size: 24px;
- 
+.infirmation h1{
+  font-size: 34px;
 }
+.infirmation p{
+  font-size: 26px;
+}
+.menu{
+  width: 100%;
+  height: 870px;
+  border: 8px solid rgba(247, 179, 77, 0.76);
+  background-image: url(img/freepik__adjust__49681.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 /* 
 @import url('https://fonts.googleapis.com/css?family=Sarala:700|Exo+2:300');
 
