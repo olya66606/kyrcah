@@ -20,6 +20,7 @@ nav{
   font-style: normal;
   font-size: 30px;
   color: black;
+
 }
 .img{
   width: 110px;
@@ -33,11 +34,7 @@ nav{
  
 }
 
-img{
-  width: 300px;
-  height: 900px;
-  border-radius: 80px;
-}
+
 .accordion, .accordion-button, .accordion-body{
   border-radius: 50px;
   font-size: 20px;
@@ -45,13 +42,17 @@ img{
 .fotki{
   width: 700px;
   height: 700px;
-  margin: 10px 168px
+  margin: 80px  168px;
+  border-radius: 80px;
 }
 .obvodka{
 background-image: url(img/freepik__upload__46114.png);
 background-repeat: no-repeat;
 background-size: cover;
 display: flex;
+width: 100%;
+height: 870px;
+border: 8px solid rgba(247, 179, 77, 0.842);
 
 }
 .info{
@@ -62,8 +63,38 @@ display: flex;
 .text{
   font-size: 20px; 
 }
+main{
+width: 100%;
+background-image: url(img/freepik__adjust__5640.png);
+background-repeat: no-repeat;
+background-size: cover;
+display: flex;
+height: 870px;
+border: 8px solid rgba(247, 179, 77, 0.76);
+}
 
 
+.harry{
+  margin: 397px 100px;
+  width: 600px;
+  height: 600px;
+}
+
+.bymaga{
+  margin: 137px 100px;
+  width:700px;
+  height: 600px;
+}
+.infirmation{
+  margin:-549px 268px;
+  width: 400px;
+  height: 100px;
+}
+.infirmation>p, h1{
+ 
+  font-size: 24px;
+ 
+}
 /* 
 @import url('https://fonts.googleapis.com/css?family=Sarala:700|Exo+2:300');
 
