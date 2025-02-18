@@ -186,7 +186,34 @@
 // Vue.createApp(App).mount('#App');
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const cardContainer = document.getElementById('coffee-card-container');
+    const cards = cardContainer.querySelectorAll('.card');
+    const links = cardContainer.querySelectorAll('.card-link.silka');
 
+    // Скрываем все карточки, кроме первой
+    for (let i = 1; i < cards.length; i++) {
+      cards[i].classList.add('hidden');
+    }
+
+    links.forEach(link => {
+      link.addEventListener('click', function(event) {
+        event.preventDefault(); // Предотвращаем переход по ссылке
+
+        const targetCardId = this.dataset.target;
+        if (targetCardId) {
+          // Скрываем все карточки
+          cards.forEach(card => card.classList.add('hidden'));
+
+          // Показываем целевую карточку
+          const targetCard = document.getElementById(targetCardId);
+          if (targetCard) {
+            targetCard.classList.remove('hidden');
+          }
+        }
+      });
+    });
+  });
 
 
 
