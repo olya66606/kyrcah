@@ -318,3 +318,144 @@ button:hover{
     transform: scale(.67);
   }
 } */
+/* CSS remains the same as the previous version */
+
+#container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.steam {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: white; /* Белый пар */
+  margin-top: -75px;
+  margin-left: 75px;
+  z-index: 0;
+  opacity: 0;
+}
+
+#steam1 {
+  animation: steam1 4s ease-out infinite;
+}
+
+#steam3 {
+  animation: steam1 4s ease-out 1s infinite; /* Задержка на 1 секунду */
+}
+
+@keyframes steam1 {
+  0% { transform: translateY(0) translateX(0) scale(0.25); opacity: 0.2; }
+  100% { transform: translateY(-200px) translateX(-20px) scale(1); opacity: 0; }
+}
+
+#steam2 {
+  animation: steam2 4s ease-out 0.5s infinite; /* Задержка на 0.5 секунды */
+}
+
+#steam4 {
+  animation: steam2 4s ease-out 1.5s infinite; /* Задержка на 1.5 секунды */
+}
+
+@keyframes steam2 {
+  0% { transform: translateY(0) translateX(0) scale(0.25); opacity: 0.2; }
+  100% { transform: translateY(-200px) translateX(20px) scale(1); opacity: 0; }
+}
+
+#cup {
+  z-index: 1;
+}
+
+#cup-body {
+  position: absolute;
+  height: 200px;
+  width: 150px; /* Уменьшено для лучшей композиции */
+  border-radius: 0 0 100px 100px;
+  background-color: #a0522d; /* Коричневый цвет */
+  margin: auto;
+  display: inline-block;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#cup-shade {
+  position: relative;
+  height: 100px;
+  width: 80px;
+  background-color: #8B4513; /* Темно-коричневый оттенок */
+  display: inline-block;
+  margin-left: 35%;
+  margin-top: -10px;
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
+#cup-handle {
+  position: relative;
+  height: 75px;
+  width: 80px;
+  border-radius: 0 100px 100px 0;
+  border: 10px solid #8B4513; /* Темно-коричневый оттенок */
+  margin-bottom: 95px;
+  margin-left: 120px;
+  display: inline-block;
+  z-index: 0;
+}
+
+#saucer {
+  position: absolute;
+  height: 30px;
+  width: 150px;
+  border-radius: 0 0 100px 100px;
+  background-color: #F9F9F9;
+  margin-top: 20px; /* Изменено для лучшего расположения */
+  margin-left: 0px;
+  z-index: 2;
+}
+
+#shadow {
+  height: 10px;
+  width: 150px;
+  border-radius: 50%;
+  margin-top: -5px;
+  margin-left: 6px;
+  background-color: #7bb8d4;
+}
+
+#questions {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#nextButton {
+  display: none;
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+#gameOver {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 100; /* Важно: чтобы перекрывало все остальное */
+  justify-content: center;
+  align-items: center;
+}
+
+#gameOver > div {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}

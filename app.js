@@ -1,192 +1,113 @@
-// const App = {
+const coffee = document.getElementById('cup');
+const steam = document.querySelectorAll('.steam');
+const questionsContainer = document.getElementById('questions-container'); // Renamed
+const nextButton = document.getElementById('nextButton');
+const gameOver = document.getElementById('gameOver');
+const restartButton = document.getElementById('restartButton');
+const questionsArray = [
+  "Какой кофеин содержит кофе?",
+  "Что такое эспрессо?",
+  "В чем разница между капучино и латте?",
+  "Что такое флэт уайты?",
+  "Какие виды зерен кофе вы знаете?"
+];
+let startTime = null;
+let questionIndex = 0;
+let gameStarted = false;
+let answers = [];
 
-// data(){
-//     return {
-//         count: 0,
-//         title: 'Счётчик',
-//     }
-// }
-// }
-// Vue.createApp(App).mount('#app');
+coffee.addEventListener('click', startGame);
 
+function startGame() {
+  if (!gameStarted) {
+    gameStarted = true;
+    gameOver.style.display = 'none'; // Скрыть окно проигрыша
+    startTime = Date.now();
 
+    // Correct way to show steam (opacity needs to be a string '1')
+    steam.forEach(element => element.style.opacity = '1');  //Fixed this line!
 
+    // Make the questions visible immediately
+    displayQuestions();
+    questionsContainer.style.display = 'block'; //Show the quiz container.  Fix.
 
-
-
-// const App = {
-
-// data(){
-//     return {
-//         placeholderString: 'Введите список заметок',
-//         title: 'Список заметок',
-//         inputValue: '',
-//         notes: []
-//     }
-// },
-
-
-// methods: {
-//         inputChangeHandler(event){
-//             this.inputValue = event.target.value; 
-//         },
-//         addNewNote(){
-//             if(this.inputValue != 0){
-//                 this.notes.push(this.inputValue);
-//                 this.inputValue = '';
-//             }
-//         },
-//         toUpperCase(item){
-//             return item.toUpperCase();
-//         },
-//         removeNote(index){
-//             this.notes.splice(index, 1);
-//         },
-//         numberOfSymbols(){
-//             console.log('numberOfSymbols');
-//             return this.notes.join('').length;
-//         },
-//     },
-//     computed: {
-//         numberOfSymbols2(){
-//             console.log('numberOfSymbols2');
-//             return this.notes.join('').length;
-//         }
-//     },
-//     watch: {
-//         inputValue(value){
-//             if(value.length > 10) {
-//                 this.inputValue = '';
-//             }
-//         }
-//     },
-// }
-//     Vue.createApp(App).mount('#app');
-    
+    // Set a timeout to check time after 2 minutes
+    setTimeout(checkTime, 120000);
+  }
+}
 
 
+function checkTime() {
+  if (questionIndex < questionsArray.length) {
+    showGameOver();
+  }
+}
 
-// let email= document.querySelector('email').value;
-// let login= document.querySelector('login');
-// let password= document.querySelector('password');
-// let btn=document.querySelector('btn');
+function showQuestions() {  // Removed this function, no longer used
+  // Removed the hiding of the steam since the steam already has a timer
+  questionsContainer.style.display = 'block';   //Removed the style
+  nextButton.style.display = 'block';   //Removed the style
+  gameStarted = false; //This shouldn't be here
+}
 
-// btn.addEventListener('click', ()=>{
-// if(email.value.lenght<5 || email.value.indexOf('@')===-1){
-//     return{
-        
-//     }
-// }
+function displayQuestions() {
+  //Clear any previous answers to make the game playable multiple times
+  for (let i = 0; i < questionsArray.length; i++) {
+    const questionId = 'question' + (i + 1);
+    const questionElement = document.getElementById(questionId);
 
-
-// });
-
-
-
-//Весокосный год с помощью vue
-// const App = {
-//     data(){
-//         return {
-//             title: 'Весокосный год',
-//             MyPlaceholder: 'Введите первый год',
-//             MyPlaceholderTwo: 'Введите конечный год',
-//             kol:[],
-//             oneYear:null,
-//             twoYear:null,
-//             count:null,
-//         }
-//     },
-//     methods: {
-//         countYear(){
-//             this.count = [];
-//             for(let i=this.oneYear; i<=this.twoYear; i++){
-//                 if((i%4===0 && i%100!==0) || i%400===0){
-//                     this.kol.push(i);
-//                     this.count=this.kol.length;
-//                 }
-//                 else{
-//                     console.log('Ochibka')
-//                 }
-//             }
-//         }
-        
-//     }
-// };
-
-// Vue.createApp(App).mount('#App');
+    if (questionElement) {
+      questionElement.textContent = questionsArray[i];
+    } else {
+      console.error("Question element not found: " + questionId);
+    }
+  }
+}
 
 
+function showGameOver() {
+  gameOver.style.display = 'flex';
+}
 
+nextButton.addEventListener('click', () => {
+  // Here add the logic for verifying answers
+  // This needs to happen *before* you reset the game
 
+  // Increment question index.
+  questionIndex++;
 
-//Блокнот с помощью vue
-// const App={
-//     data(){
-//         return{
-//             title: 'Список задач',
-//             newTask: '',
-//             Category:'',
-//             tasks:[],
-//             persTask:[],
-//             shopTask:[],
-//         }
-//     },
+  if (questionIndex < questionsArray.length) {
+    // Load the next question.
+    displayQuestions();
+  }
+  else{
+    console.log("All questions have been answered!")
+    // Reset the quiz
+    resetGame();
+  }
+});
 
+restartButton.addEventListener('click', resetGame);
 
-//     methods:{
-//         addTask(){
-           
-//             if(this.newTask&& this.Category){
-//                 if(this.Category==="Работа"){
-//                     this.tasks.push(this.newTask);
-//                 }
-//                 else if(this.Category==="Личное"){
-//                     this.persTask.push(this.newTask);
-//                 }
-//                 else if(this.Category==="Покупки"){
-//                     this.shopTask.push(this.newTask);
-//                 }
+function resetGame() {
+  startTime = null;
+  questionIndex = 0;
+  questionsContainer.style.display = 'none';   //Fixed this style
+  nextButton.style.display = 'none';
+  steam.forEach(element => element.style.opacity = 0);  // Fixed this style
+  gameOver.style.display = 'none';
+  gameStarted = false;
+  answers = []; // Очистить массив ответов
 
-//                 this.newTask='';
-//                 this.Category='';
+  //Clear the questions text
+  for (let i = 0; i < questionsArray.length; i++) {
+    const questionId = 'question' + (i + 1);
+    const questionElement = document.getElementById(questionId);
 
-//             }
-//         } ,
-//         removeTask(index, category){
-//             if(category==="Работа"){
-//                 this.tasks.splice(index, 1);
-//             }
-//             else if(category==="Личное"){
-//                 this.persTask.splice(index, 1);
-//             }
-//             else if(category==="Покупки"){
-//                 this.shopTask.splice(index, 1);
-//             }
-        
-//         }
-        
-//     }
-// };
-// Vue.createApp(App).mount('#App');
-
-// const App={
-//         data(){
-//             return{
-//             amount:0;
-               
-               
-//             }
-//         },
-//     }
-
-
-
-
-
-// Vue.createApp(App).mount('#App');
-
-
-
-
-
-
+    if (questionElement) {
+      questionElement.textContent = "";
+    } else {
+      console.error("Question element not found: " + questionId);
+    }
+  }
+}
