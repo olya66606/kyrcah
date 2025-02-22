@@ -65,25 +65,56 @@
           </div>
         </div>
       </nav> 
- 
 
-
-
+  
    <main>
         <div class="left">
           <img src="img/harry-Photoroom.png" class="harry">
         </div>
         <div class="right">
-           <img src="img/bymaga-Photoroom.png" class="bymaga">
+       
+      <h1>Сыграй со мной</h1>
+      <button class="button" onclick="startGame()">Начать игру</button>
+      <div id="game">
+        <div id="timer"></div>
+        <div id="question-container"></div>
+        <button class="button" onclick="nextQuestion()">Следующий вопрос</button>
+    </div>
+
+    <div id="loss">
+        <h2>Вы проиграли!</h2>
+        <button class="button" onclick="startGame()">Начать заново</button>
+    </div>
+
+    <div id="win">
+        <h2>Поздравляем, вы можете продолжить</h2>
+        <button class="button" onclick="startGame()">Начать заново</button>
+    </div>
+ </div>     
+ <div id="container">
+      <div class="steam" id="steam1"> </div>
+      <div class="steam" id="steam2"> </div>
+      <div class="steam" id="steam3"> </div>
+      <div class="steam" id="steam4"> </div>
+      <div id="cup">
+        <div id="cup-body">
+          <div id="cup-shade">
+          </div>  
+        </div>
+      </div> <div id="cup-handle"></div>  
+      <div id="saucer"></div>
+    </div>
+           <!-- <img src="img/bymaga-Photoroom.png" class="bymaga">
            <div class="infirmation">
             <h1><b>Добро пожаловать путник</b></h1>
               <p>Ты забрел в удивительную кофейню,наполненную волшебством <br> и воспоминаниями.
               Здесь ты сможешь попробовать удивительные блюда <br> и напитки</p>
-              <button type="button" class="btn btn-outline-light  hachi-maru-pop-regular ">Узнать подробнее</button>
-           </div>
-        </div>
+              <button type="button" class="btn btn-outline-light  hachi-maru-pop-regular ">Узнать подробнее</button> -->
+          
       </main> 
 
+
+      
     <div id="carouselExampleInterval" class=" slide " data-bs-ride="carousel">
         <div class="  carousel-inner">
           <div class="carousel-item active  " data-bs-interval="10000">
@@ -219,6 +250,8 @@
                         </div>
         </div>
       </div> 
+
+     
       <!-- <div class="menu">
       </div>
       <div class="wrapper">
