@@ -136,10 +136,10 @@ border: 8px solid rgba(247, 179, 77, 0.76);
   height: 800px;
   margin-top: 30px;
 }
-/* .right>h1{
+.right>h1{
   font-size:70px;
   color: white;
-} */
+} 
 body { 
   font-family: Arial, sans-serif; 
   text-align: center; }
@@ -278,3 +278,41 @@ body {
   z-index: 2;
   padding: 10px;
 }
+
+
+
+.notebook {
+  width: 500px;
+  margin-top:150px ;
+  height: 450px;
+  border-radius: 10px 20px 200px 200px;
+  box-shadow: 6px 15px 65px black;
+}
+.page {
+  display: none;
+  padding: 20px;
+}
+.active {
+  display: block;
+}
+.buttons {
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 30px;
+}
+button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 30px;
+}
+.rychka{
+  height: 205px;
+  width: 100px;
+  border-radius: 0 150px 150px 0;
+  box-shadow: 10px 4px 10px black;
+  margin: 200px -9px;
+  z-index: 1;
+}
+.page>p,h2{
+
+color: rgba(255, 255, 255, 0.884);}
