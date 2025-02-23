@@ -1,14 +1,19 @@
 nav{
-  background-color: rgba(160, 77, 38, 0.705);
+height: 10px;
+text-align: center;
+
 }
 
 .flex{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+
 }
 .knopka{
   width: 70px;
   height: 50px;
+ 
+ 
 }
 .navi{
   background-color: black;
@@ -22,8 +27,9 @@ nav{
 
 }
 .img{
-  width: 110px;
-  height: 90px;
+  width: 210px;
+  height: 190px;
+  margin: -36px -37px;
 }
 .zadnik{
   background-image: url(img/zadnik.png);
@@ -51,7 +57,7 @@ background-size: cover;
 display: flex;
 width: 100%;
 height: 870px;
-border: 8px solid rgba(247, 179, 77, 0.842);
+
 
 }
 .info{
@@ -64,14 +70,9 @@ border: 8px solid rgba(247, 179, 77, 0.842);
 }
 main{
 width: 100%;
-background-image: url(img/freepik__adjust__5640.png);
-/* background-image: url(img/freepik__upload__46114.png); */
-/* background-color: rgba(153, 77, 41, 0.842); */
-background-repeat: no-repeat;
-background-size: cover;
+background-color: rgb(128, 57, 57);
 display: flex;
-height: 870px;
-border: 8px solid rgba(247, 179, 77, 0.76);
+height: 890px;
 }
 
 
@@ -102,7 +103,6 @@ border: 8px solid rgba(247, 179, 77, 0.76);
 .menu{
   width: 100%;
   height: 870px;
-  border: 8px solid rgba(247, 179, 77, 0.76);
 }
 .menu h1{
   text-align: center;
@@ -141,8 +141,7 @@ border: 8px solid rgba(247, 179, 77, 0.76);
   color: white;
 } 
 body { 
-  font-family: Arial, sans-serif; 
-  text-align: center; }
+  font-family: Arial, sans-serif;  }
 #game { 
   display: none;
   color: white;
@@ -155,9 +154,7 @@ body {
   font-size: 24px; 
   color: rgb(255, 255, 255); } 
 
-body {
-  background: #8acdeb;
-}
+
 #container {
   position: absolute;
   top: 50%;
