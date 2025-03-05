@@ -1,12 +1,12 @@
  const questions = [
             { question: "Какой кофе содержит молоко?", answers: ["Эспрессо", "Капучино", "Американо"], correct: 1 },
-            { question: "Кофе, приготовленный с помощью давления воздуха?", answers: ["Фильтр-кофе", "Эспрессо", "Раф"], correct: 1 },
+            { question: "Кофе, на основе сливок?", answers: ["Фильтр-кофе", "Раф", "Эспрессо"], correct: 1 },
             { question: "Какой кофе имеет крепкий вкус?", answers: ["Латте", "Эспрессо", "Капучино"], correct: 1 },
-            { question: "Какой напиток готовится на основе эспрессо и горячего молока?", answers: ["Личи", "Капучино", "Мокко"], correct: 1 },
+            { question: "Что из этого напиток?", answers: ["Личи", "Мокко", "Чай"], correct: 1 },
             { question: "Кофе, который заваривается молоком?", answers: ["Латте", "Американо", "Эспрессо"], correct: 0 }
         ];
         let timer;
-        let timeLeft = 120; // 2 минуты
+        let timeLeft = 60; // 2 минуты
         let currentQuestionIndex = 0;
 
         function startGame() {
@@ -14,7 +14,7 @@
             document.getElementById("loss").style.display = "none";
             document.getElementById("win").style.display = "none";
             currentQuestionIndex = 0;
-            timeLeft = 120;
+            timeLeft = 60;
             loadQuestion();
             startTimer();
         }
@@ -68,11 +68,9 @@
         }
 
 
-
-
-
-
+//_________________________________________________________________\\
         
+
         let currentPage = 0;
         const pages = document.querySelectorAll('.page');
     

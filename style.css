@@ -1,9 +1,18 @@
-nav{
-height: 100px;
-text-align: center;
-background-color: rgb(0, 0, 0);
-color: white;
+*{
+  margin: 0;
+  padding: 0;
 
+}
+
+
+
+nav{
+height: 80px;
+text-align: center;
+background-color:#94652f;
+color: white;
+display: flex;
+align-items: center;
 }
 
 .flex{
@@ -14,6 +23,7 @@ color: white;
 .knopka{
   width: 70px;
   height: 50px;
+  border: 1px solid black;
  
  
 }
@@ -28,15 +38,9 @@ color: white;
   color: rgb(255, 255, 255);
 
 }
-.img{
-  width: 210px;
-  height: 190px;
-  margin: -36px -37px;
-}
+
 .zadnik{
-  background-image: url(img/zadnik.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: rgba(94, 92, 92, 0.87);
   height: 100%; 
  
 }
@@ -53,9 +57,10 @@ color: white;
   border-radius: 80px;
 }
 .obvodka{
-background-image: url(img/freepik__upload__46114.png);
+/* background-image: url(img/freepik__upload__46114.png);
 background-repeat: no-repeat;
-background-size: cover;
+background-size: cover; */
+background-color: rgba(92, 92, 92, 0.897);
 display: flex;
 width: 100%;
 height: 870px;
@@ -72,6 +77,7 @@ height: 870px;
 }
 main{
 width: 100%;
+background-color: #252525;
 background-image: url(img/cofee.jpg);
 background-repeat: no-repeat;
 background-size: cover;
@@ -82,10 +88,9 @@ height: 890px;
 
 
 .harry{
-  margin: 100px 607px;
-  width: 600px;
-  height: 600px;
-
+  margin: 360px 720px;
+  width: 521px;
+  height: 518px;
 }
 
 .bymaga{
@@ -135,149 +140,7 @@ height: 890px;
 .right{
   margin: 10px -692px;
 }
-/**/
-
-.right>h1{
-  font-size:70px;
-  color: white;
-} 
-body { 
-  font-family: Arial, sans-serif;  }
-#game { 
-  display: none;
-  color: white;
-}
-#loss, #win { 
-  display: none; 
-  color: white;
-}
-#timer { 
-  font-size: 24px; 
-  color: rgb(255, 255, 255); } 
-
-
-#container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.steam {
-  position: absolute;
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  background-color: #fff;
- bottom: -66px;
- left: 500px;
-  z-index: 0;
-  opacity: 0;
-}
-
-#steam1 {
-  -webkit-animation: steam1 4s ease-out infinite;
-  animation: steam1 4s ease-out infinite;
-}
-
-#steam3 {
-  -webkit-animation: steam1 4s ease-out 1s infinite;
-  animation: steam1 4s ease-out 1s infinite;
-}
-
-@-webkit-keyframes steam1 {
-  0% {transform: translateY(0) translateX(0) scale(0.25); opacity: 0.2;}
-  100% {transform: translateY(-200px) translateX(-20px) scale(1); opacity: 0;}
-}
-
-@keyframes steam1 {
-  0% {transform: translateY(0) translateX(0) scale(0.25); opacity: 0.2;}
-  100% {transform: translateY(-200px) translateX(-20px) scale(1); opacity: 0;}
-}
-
-#steam2 {
-  -webkit-animation: steam2 4s ease-out 0.5s infinite;
-  animation: steam2 4s ease-out 0.5s infinite;
-}
-
-#steam4 {
-  -webkit-animation: steam2 4s ease-out 1.5s infinite;
-  animation: steam2 4s ease-out 1.5s infinite;
-}
-
-@-webkit-keyframes steam2 {
-  0% {transform: translateY(0) translateX(0) scale(0.25); opacity: 0.2;}
-  100% {transform: translateY(-200px) translateX(20px) scale(1); opacity: 0;}
-}
-
-@keyframes steam2 {
-  0% {transform: translateY(0) translateX(0) scale(0.25); opacity: 0.2;}
-  100% {transform: translateY(-200px) translateX(20px) scale(1); opacity: 0;}
-}
-
-#cup {
-  z-index: -1;
-}
-
-#cup-body {
-  position: absolute;
-  top: 50%;
-  height: 200px;
-  width: 300px;
-  border-radius: 0 0 150px 150px;
-  background-color: #c24242f8;
-  margin: 169px 202px;
-  display: inline-block;
-  overflow: hidden;
-  z-index: 2;
-  box-shadow: 10px 10px 10px black;
-}
-
-#cup-shade {
-  position: relative;
-  height: 300px;
-  width: 200px;
-  background-color:  #882b2bcb;
-  display: inline-block;
-  margin-left: 42%;
-  margin-top: -3px;
-  transform: rotate(50deg);
-  z-index: -1;
- 
-
-}
-
-#cup-handle {
-  position: relative;
-  height: 75px;
-  width: 80px;
-  border-radius: 0 150px 150px 0;
-  border: 15px solid #c24242e7;
- margin: 169px 202px;
-  display: inline-block;
-  z-index: -1;
-  bottom: -227px;
-  left: 110%;  
-  box-shadow: 10px 10px 10px black;
-}
-#saucer {
-  position: relative;
-  height: 30px;
-  width: 300px;  
-  border-radius: 0 0 100px 100px;
-  background-color: #c24242;
-  bottom: -158px;
-  left: 93%;  
-  z-index: 2;
-  box-shadow: 10px 10px 10px black;
-}
-.button{
-  width: 300px;
-  border-radius:50px ;
-  z-index: 2;
-  padding: 10px;
-}
-
-
+/*_____________________________________________________________________________________________*/
 
 .notebook {
   width: 500px;
@@ -314,3 +177,206 @@ button {
 .page>p,h2{
 
 color: rgba(255, 255, 255, 0.884);}
+
+
+
+/*_____________________________________________________________________________________________*/
+
+.left{
+  margin: 20px auto;
+}
+
+#container {
+  padding-bottom: 100px;
+  background-color: rgba(255, 255, 255, 0.836);
+  border-radius:20%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 600px;
+  justify-content: center;
+
+}
+
+/* Coffee Cup Styles */
+#coffee-steam {
+  position: relative;
+    height: 150px;
+    margin-top: 70px;
+}
+
+.steam {
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: rgba(138, 138, 138, 0.541);
+  animation: steam 3s linear infinite;
+  opacity: 0;
+}
+
+#steam1 {
+  top: 100%;
+  left: 40%;
+  animation-delay: 0s;
+}
+
+#steam2 {
+  top: 90%;
+  left: 45%;
+  animation-delay: 1s;
+}
+
+#steam3 {
+  top: 80%;
+  left: 40%;
+  animation-delay: 1.5s;
+}
+
+#steam4 {
+  top: 70%;
+  left: 40%;
+  animation-delay: 2.5s;
+}
+
+@keyframes steam {
+  0% {
+      transform: translateY(0);
+      opacity: 0.5;
+  }
+  100% {
+      transform: translateY(-100px);
+      opacity: 0;
+  }
+}
+
+#cup {
+  width: 100px;
+  height: 80px;
+  background-color: #8B4513; /* Coffee color */
+  border-radius: 0 0 50px 50px;
+ margin: 0 auto;
+  position: relative;
+}
+
+#cup-body {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70%;
+  background-color: #d2691e;
+  border-radius: 0 0 50px 50px;
+}
+
+#cup-handle {
+  position: absolute;
+  top: 20px;
+  right: -20px;
+  width: 30px;
+  height: 40px;
+  border: 5px solid #f0e68c;
+  border-radius: 50%;
+}
+
+#saucer {
+  width: 150px;
+  height: 20px;
+  background-color: #f0e68c;
+  border-radius: 10px;
+  margin: 10px auto;
+}
+
+/* Game Styles */
+p{
+  color: #000000;
+}
+
+h1 {
+  color: #8B4513;
+  margin-bottom: 20px;
+}
+
+.button {
+  background-color: #8B4513;
+  color: white;
+  padding: 20px ;
+  width: 200px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 20px;
+  margin: 20px;
+  font-family: "Pangolin", serif;
+}
+
+button[ onclick="checkAnswer(0)"], button[ onclick="checkAnswer(1)"], button[ onclick="checkAnswer(2)"] {
+  background-color: #8b4513;
+  border: none;
+  padding: 10px;
+  color: white;
+}
+
+.button:hover {
+  background-color: #a0522d;
+}
+
+#game, #loss, #win {
+  margin-top: 20px;
+  display: none;
+}
+
+#timer {
+  font-size: 20px;
+  font-weight: bold;
+  color: #8b4513a4;
+  margin-bottom: 10px;
+}
+
+#question-container {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+#loss h2, #win h2 {
+  color: #8B4513;
+  margin-bottom: 10px;
+}
+#loss h2{
+  color: rgba(151, 73, 27, 0.829);
+}
+
+.igra{
+  font-size: 50px;
+
+}
+.start, .cup{
+margin-top: -10px;
+}
+#win h2{
+  font-size: 35px;
+  color: #d2691e;
+}
+.vigrish{
+  background-color: #8B4513;
+  border: none;
+  padding: 20px;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  border-radius: 20px;
+  font-family: "Pangolin", serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

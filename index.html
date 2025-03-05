@@ -17,13 +17,11 @@
 </head>
 <body>
    
- <nav class="navbar sticky-top flex"> 
-     
-        
-              <a class="nav-link hachi-maru-pop-regular" aria-current="page" href="#">главная</a>
-                  <a class="nav-link  hachi-maru-pop-regular" href="#">о нас</a>
-                      <a class="nav-link  hachi-maru-pop-regular" href="#">команда</a>
-                        <a class="nav-link hachi-maru-pop-regular" href="#">цена</a>
+ <nav class="navbar sticky-top flex ">    
+              <a class="nav-link hachi-maru-pop-regular header" aria-current="page" href="#">Главная</a>
+                  <a class="nav-link  hachi-maru-pop-regular" href="#">О нас</a>
+                      <a class="nav-link  hachi-maru-pop-regular" href="#">Команда</a>
+                        <a class="nav-link hachi-maru-pop-regular" href="#">Цена</a>
                             <i class="bi bi-people-fill " style="font-size: 3rem;"></i>   
                             <button class="knopka navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasnavbar" aria-controls="offcanvasnavbar">
                                 <span class="navbar-toggler-icon"></span> 
@@ -66,57 +64,51 @@
         </div>
         
       </nav> 
-  <!-- <img class="img" src="img/logo-photoroom.png" alt=""> -->
-  
+
    <main>
-        <div class="left">
-          <img src="img/cofe.png" class="harry">
-        </div>
-        <div class="right">
-       
-      <h1>Сыграй со мной</h1>
-      <button class="button" onclick="startGame()">Начать игру</button>
-      <div id="game">
-        <div id="timer"></div>
-        <div id="question-container"></div>
-        <button class="button" onclick="nextQuestion()">Следующий вопрос</button>
+    <div class="right">
+      <img  class="harry" src="img/harry-Photoroom.png" alt="">
     </div>
-
-    <div id="loss">
-        <h2>Вы проиграли!</h2>
-        <button class="button" onclick="startGame()">Начать заново</button>
-    </div>
-
-    <div id="win">
-        <h2>Поздравляем, вы можете продолжить</h2>
-        <button class="button" onclick="startGame()">Начать заново</button>
-    </div>
- </div>     
- <!-- <div id="container">
-      <div class="steam" id="steam1"> </div>
-      <div class="steam" id="steam2"> </div>
-      <div class="steam" id="steam3"> </div>
-      <div class="steam" id="steam4"> </div>
-      <div id="cup">
-        <div id="cup-body">
-          <div id="cup-shade">
-          </div>  
-        </div>
-      </div> <div id="cup-handle"></div>  
-      <div id="saucer"></div>
-    </div> -->
-           <!-- <img src="img/bymaga-Photoroom.png" class="bymaga">
-           <div class="infirmation">
-            <h1><b>Добро пожаловать путник</b></h1>
-              <p>Ты забрел в удивительную кофейню,наполненную волшебством <br> и воспоминаниями.
-              Здесь ты сможешь попробовать удивительные блюда <br> и напитки</p>
-              <button type="button" class="btn btn-outline-light  hachi-maru-pop-regular ">Узнать подробнее</button> -->
-          
+    <div class="left">
+          <div id="container">
+            <div id="coffee-steam">
+                <div class="steam" id="steam1"></div>
+                <div class="steam" id="steam2"></div>
+                <div class="steam" id="steam3"></div>
+                <div class="steam" id="steam4"></div>
+            </div>
+    
+            <div id="cup">
+                <div id="cup-body"></div>
+                <div id="cup-handle"></div>
+            </div>
+    
+            <div id="saucer"></div>
+    
+            <h1 class="igra">Сыграй со мной</h1>
+            <button class="button start" onclick="startGame()">Начать игру</button>
+            <div id="game">
+                <div id="timer"></div>
+                <div id="question-container"></div>
+                
+              
+            </div>
+    
+            <div id="loss">
+                <h2>Вы проиграли</h2>
+                <button class="button" onclick="startGame()">Начать заново</button>
+           
+            </div>
+    
+            <div id="win">
+                <h1>Поздравляем, вы можете продолжить</h1>
+                <button class="vigrish">Пройти Дальше</button>
+            </div>
+        </div>  
+</div>
       </main> 
-
-
-      
-    <div id="carouselExampleInterval" class=" slide " data-bs-ride="carousel">
+ 
+    <div id="carouselExampleInterval carusel" class=" slide " data-bs-ride="carousel">
         <div class="  carousel-inner">
           <div class="carousel-item active  " data-bs-interval="10000">
             <div class="obvodka">
@@ -252,8 +244,7 @@
         </div>
       </div> 
 
-     
-      <!-- <div class="menu">
+<!-- <div class="menu">
       </div>
       <div class="wrapper">
         <div class="card">
@@ -273,8 +264,8 @@
             </ul>
             <button>Add to cart, yo</button>
           </div>
-        </div>  -->
-      
+        </div>   -->
+       
 </body>
 </html>
 
