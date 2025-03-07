@@ -10,19 +10,26 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shafarik&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ponomar&display=swap" rel="stylesheet">
 
    
     <title> cafe</title>
 </head>
 <body>
    
- <nav class="navbar sticky-top flex ">    
-              <a class="nav-link hachi-maru-pop-regular header" aria-current="page" href="#">Главная</a>
+ <nav class="navbar sticky-top flex ">   
+  <div class="header">
+   <a class="nav-link hachi-maru-pop-regular " aria-current="page" href="#">Главная</a>
                   <a class="nav-link  hachi-maru-pop-regular" href="#">О нас</a>
                       <a class="nav-link  hachi-maru-pop-regular" href="#">Команда</a>
                         <a class="nav-link hachi-maru-pop-regular" href="#">Цена</a>
                             <i class="bi bi-people-fill " style="font-size: 3rem;"></i>   
+ </div> 
+             
                             <button class="knopka navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasnavbar" aria-controls="offcanvasnavbar">
                                 <span class="navbar-toggler-icon"></span> 
                             </button>
@@ -34,7 +41,7 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">что то будет</a>
+                  <a class="nav-link " aria-current="page" href="#">что то будет</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">как нас найти-></a>
@@ -71,13 +78,14 @@
     </div>
     <div class="left">
           <div id="container">
+          
             <div id="coffee-steam">
                 <div class="steam" id="steam1"></div>
                 <div class="steam" id="steam2"></div>
                 <div class="steam" id="steam3"></div>
                 <div class="steam" id="steam4"></div>
             </div>
-    
+      <!-- <h1 class="igra">Добро пожаловать путник</h1> -->
             <div id="cup">
                 <div id="cup-body"></div>
                 <div id="cup-handle"></div>
@@ -141,47 +149,45 @@
                 <div class="page">
                     <h2>Обратная связь</h2>
                     <p>Контакты для связи:</p>
-                    <p>Email: aleksey@coffeelover.com</p>
-                    <p>Instagram: @barista.aleksey</p>
+                    <p>Почта: алексей@кофулюбитель.ком</p>
+                    <p>Инста: @бариста.алексей</p>
                 </div>
                 <div class="buttons ">
-                    <button  onclick="prevPage()">Назад</button>
-                    <button  onclick="nextPage()">Вперед</button>
-                </div>
+                    <button class="vpered"  onclick="prevPage()"><p>Вперед</p></button>
+                    <button class="nazad" onclick="nextPage()"><p>Назад
             </div>
-            <div class="rychka"></div>
             
             </div>
           </div>
                 <div class="carousel-item"  data-bs-interval="2000">
                   <div class="obvodka">
                       <img src="img/barista2.png" class="d-block fotki" alt="">
-                      <div class="notebook">
+                      <!-- <div class="notebook">
                         <div class="page active"> 
                             <h2>О баристе</h2>
                             <p>Имя: Алексей</p>
                             <p>Опыт работы: 5 лет</p>
                             <p>Специализация: Эспрессо и латте арт</p>
                         </div>
-                        <div class="page">
+                        <div class="page1">
                             <h2>Увлечения</h2>
                             <p>Любимые сорта кофе: Эфиопия, Колумбия</p>
                             <p>Хобби: Фотография, путешествия</p>
                         </div>
-                        <div class="page">
+                        <div class="page3">
                             <h2>Советы для начинающих</h2>
                             <p>1. Изучите различные виды кофе</p>
                             <p>2. Практикуйтесь с техникой приготовления</p>
                             <p>3. Обратите внимание на текстуру молока</p>
                         </div>
-                        <div class="page">
+                        <div class="page4">
                             <h2>Рецепты</h2>
                             <p>Латте:</p>
                             <p>- Эспрессо: 1 порция</p>
                             <p>- Парное молоко: 200 мл</p>
                             <p>- Молочная пена: по вкусу</p>
                         </div>
-                        <div class="page">
+                        <div class="page5">
                             <h2>Обратная связь</h2>
                             <p>Контакты для связи:</p>
                             <p>Email: aleksey@coffeelover.com</p>
@@ -192,14 +198,13 @@
                             <button   onclick="prevPage()">Назад</button>
                             <button  onclick="nextPage()">Вперед</button>
                         </div>
-                    </div>
-                    <div class="rychka"></div>
+                    </div> -->
                   </div>
                 </div>
                         <div class="carousel-item">
                             <div class="obvodka">
                              <img src="img/barista3.png" class="d-block fotki" alt="">
-                             <div class="notebook">
+                             <!-- <div class="notebook">
                               <div class="page active"> 
                                   <h2>О баристе</h2>
                                   <p>Имя: Алексей</p>
@@ -235,14 +240,11 @@
                                   <button  onclick="prevPage()">Назад</button>
                                   <button onclick="nextPage()">Вперед</button>
                               </div>
-                          </div>
-                          <div class="rychka">
-                           
+                          </div> -->
+
                           </div>
                             </div>
                         </div>
-        </div>
-      </div> 
 
 <!-- <div class="menu">
       </div>

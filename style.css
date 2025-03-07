@@ -4,17 +4,22 @@
 
 }
 
-
+body{
+  background-color: #a5743c;
+}
 
 nav{
 height: 80px;
 text-align: center;
-background-color:#94652f;
 color: white;
 display: flex;
 align-items: center;
 }
-
+.header{
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+}
 .flex{
   display: flex;
   justify-content: space-evenly;
@@ -31,7 +36,10 @@ align-items: center;
   background-color: black;
 }
 .hachi-maru-pop-regular, li,ul,p,h1,h2, .nav-link{
-  font-family: "Pangolin", serif;
+  /* font-family: "Shafarik", system-ui;
+  font-weight: 300;
+  font-style: normal; */
+  font-family: "Ponomar", system-ui;
   font-weight: 400;
   font-style: normal;
   font-size: 30px;
@@ -40,8 +48,9 @@ align-items: center;
 }
 
 .zadnik{
-  background-color: rgba(94, 92, 92, 0.87);
-  height: 100%; 
+  background-color: rgba(0, 0, 0, 0.432);
+  height: 100%;
+  color: wheat; 
  
 }
 
@@ -54,13 +63,13 @@ align-items: center;
   width: 700px;
   height: 700px;
   margin: 80px  168px;
-  border-radius: 80px;
+  border-radius: 100%;
+  border: 7px solid white;
 }
 .obvodka{
 /* background-image: url(img/freepik__upload__46114.png);
 background-repeat: no-repeat;
 background-size: cover; */
-background-color: rgba(92, 92, 92, 0.897);
 display: flex;
 width: 100%;
 height: 870px;
@@ -81,14 +90,15 @@ background-color: #252525;
 background-image: url(img/cofee.jpg);
 background-repeat: no-repeat;
 background-size: cover;
+border-radius: 60px;
 display: flex;
-height: 890px;
+height: 820px;
 
 }
 
 
 .harry{
-  margin: 360px 720px;
+  margin: 272px 820px;
   width: 521px;
   height: 518px;
 }
@@ -146,12 +156,14 @@ height: 890px;
   width: 500px;
   margin-top:150px ;
   height: 450px;
-  border-radius: 10px 20px 200px 200px;
+  border-radius: 60px;
+  padding: 10px;
+  background-color: white;
   box-shadow: 6px 15px 65px black;
 }
 .page {
   display: none;
-  padding: 20px;
+  padding: 30px;
 }
 .active {
   display: block;
@@ -166,19 +178,39 @@ button {
   margin: 0 5px;
   border-radius: 30px;
 }
-.rychka{
-  height: 205px;
-  width: 100px;
-  border-radius: 0 150px 150px 0;
-  box-shadow: 10px 4px 10px black;
-  margin: 200px -9px;
-  z-index: 1;
-}
+
 .page>p,h2{
 
-color: rgba(255, 255, 255, 0.884);}
+color: rgba(0, 0, 0, 0.884);}
 
-
+.vpered{
+  width: 100px;
+  height: 40px;
+  font-size: 10px;
+  border: none;
+  text-align: center;
+  border-radius: 30px; 
+  box-shadow: 20px 15px 25px black;
+  background-color: #02020200;
+}
+.vpered>p{
+  font-size: 20px;
+  text-align: center;
+}
+.nazad>p{
+  font-size: 20px;
+  text-align: center;
+}
+.nazad{
+  width: 100px;
+  height: 40px;
+  font-size: 10px;
+  border: none;
+  margin-left:100px;
+  border-radius: 30px; 
+  box-shadow: 20px 15px 25px black;
+  background-color: #02020200;
+}
 
 /*_____________________________________________________________________________________________*/
 

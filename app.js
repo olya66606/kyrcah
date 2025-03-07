@@ -2,11 +2,11 @@
             { question: "Какой кофе содержит молоко?", answers: ["Эспрессо", "Капучино", "Американо"], correct: 1 },
             { question: "Кофе, на основе сливок?", answers: ["Фильтр-кофе", "Раф", "Эспрессо"], correct: 1 },
             { question: "Какой кофе имеет крепкий вкус?", answers: ["Латте", "Эспрессо", "Капучино"], correct: 1 },
-            { question: "Что из этого напиток?", answers: ["Личи", "Мокко", "Чай"], correct: 1 },
+            { question: "Что из этого напиток?", answers: ["Личи", "Мокко", "Мандарин"], correct: 1 },
             { question: "Кофе, который заваривается молоком?", answers: ["Латте", "Американо", "Эспрессо"], correct: 0 }
         ];
         let timer;
-        let timeLeft = 60; // 2 минуты
+        let timeLeft = 60; 
         let currentQuestionIndex = 0;
 
         function startGame() {
