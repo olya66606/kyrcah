@@ -19,7 +19,9 @@ align-items: center;
   display: flex;
   justify-content: space-between;
   width: 1200px;
+  margin-top: 10px;
 }
+
 .flex{
   display: flex;
   justify-content: space-evenly;
@@ -85,7 +87,8 @@ height: 870px;
   font-size: 20px; 
 }
 main{
-width: 100%;
+width: 1650px;
+margin: 0 auto;
 background-color: #252525;
 background-image: url(img/cofee.jpg);
 background-repeat: no-repeat;

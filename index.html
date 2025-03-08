@@ -23,16 +23,17 @@
    
  <nav class="navbar sticky-top flex ">   
   <div class="header">
-   <a class="nav-link hachi-maru-pop-regular " aria-current="page" href="#">Главная</a>
+   <a class="nav-link hachi-maru-pop-regular " aria-current="page" href="#maen">Главная</a>
                   <a class="nav-link  hachi-maru-pop-regular" href="#">О нас</a>
-                      <a class="nav-link  hachi-maru-pop-regular" href="#">Команда</a>
+                      <a class="nav-link  hachi-maru-pop-regular" href="#carouselExampleInterval">Команда</a>
                         <a class="nav-link hachi-maru-pop-regular" href="#">Цена</a>
-                            <i class="bi bi-people-fill " style="font-size: 3rem;"></i>   
- </div> 
-             
+                            <!-- <i class="bi bi-people-fill " style="font-size: 3rem;"></i>  -->
                             <button class="knopka navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasnavbar" aria-controls="offcanvasnavbar">
                                 <span class="navbar-toggler-icon"></span> 
-                            </button>
+                            </button>  
+ </div> 
+             
+                            
           <div class="offcanvas offcanvas-end zadnik" tabindex="-1" id="offcanvasnavbar" aria-labelledby="offcanvasnavbarlabel">
             <div class="offcanvas-header ">
               <h5 class="offcanvas-title hachi-maru-pop-regular " id="offcanvasnavbarlabel">дополнительное меню</h5>
@@ -72,7 +73,7 @@
         
       </nav> 
 
-   <main>
+   <main id="maen">
     <div class="right">
       <img  class="harry" src="img/harry-Photoroom.png" alt="">
     </div>
@@ -116,11 +117,12 @@
 </div>
       </main> 
  
-    <div id="carouselExampleInterval carusel" class=" slide " data-bs-ride="carousel">
+    <div id="carouselExampleInterval" class=" slide " data-bs-ride="carousel">
         <div class="  carousel-inner">
           <div class="carousel-item active  " data-bs-interval="10000">
             <div class="obvodka">
               <img src="img/barista.png" class="d-block fotki" alt="">
+              
               <div class="notebook">
                 <div class="page active"> 
                     <h2>О баристе</h2>
@@ -155,10 +157,10 @@
                 <div class="buttons ">
                     <button class="vpered"  onclick="prevPage()"><p>Вперед</p></button>
                     <button class="nazad" onclick="nextPage()"><p>Назад
-            </div>
-            
-            </div>
           </div>
+       </div>
+    </div>
+</div>
                 <div class="carousel-item"  data-bs-interval="2000">
                   <div class="obvodka">
                       <img src="img/barista2.png" class="d-block fotki" alt="">
@@ -241,10 +243,11 @@
                                   <button onclick="nextPage()">Вперед</button>
                               </div>
                           </div> -->
-
                           </div>
                             </div>
-                        </div>
+                
+            </div>  
+    </div>             
 
 <!-- <div class="menu">
       </div>
