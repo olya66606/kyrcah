@@ -93,23 +93,34 @@
 
 //_________________________________________________________________\\
    
-
 document.addEventListener('DOMContentLoaded', function () {
-    const cards = document.querySelectorAll('.card');
-    const links = document.querySelectorAll('.card-link.silka');
+    function setupCarousel(containerClass) {
+        const containers = document.querySelectorAll(containerClass);
 
-    links.forEach(link => {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-            const targetCardId = this.dataset.target;
+        containers.forEach(container => {
+            const cards = container.querySelectorAll('.card');
+            const links = container.querySelectorAll('.card-link.silka');
 
-            cards.forEach(card => {
-                card.classList.add('hidden');
+            links.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    const targetCardId = this.dataset.target;
+
+                    cards.forEach(card => {
+                        card.classList.add('hidden');
+                    });
+
+                    document.getElementById(targetCardId).classList.remove('hidden');
+                });
             });
 
-            document.getElementById(targetCardId).classList.remove('hidden');
+            if (cards.length > 0) {
+                cards[0].classList.remove('hidden');
+            }
         });
-    });
+    }
 
-    document.getElementById('card-1').classList.remove('hidden');
+    setupCarousel('.coffee-card-container');
+    setupCarousel('.cold-drinks-card-container');
+    setupCarousel('.tea-card-container');
 });
