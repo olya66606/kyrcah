@@ -91,4 +91,25 @@
         }
 
 
+//_________________________________________________________________\\
+   
 
+document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.card');
+    const links = document.querySelectorAll('.card-link.silka');
+
+    links.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            const targetCardId = this.dataset.target;
+
+            cards.forEach(card => {
+                card.classList.add('hidden');
+            });
+
+            document.getElementById(targetCardId).classList.remove('hidden');
+        });
+    });
+
+    document.getElementById('card-1').classList.remove('hidden');
+});

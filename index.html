@@ -16,6 +16,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ponomar&display=swap" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    
+
    
     <title> cafe</title>
 </head>
@@ -23,34 +28,34 @@
    
  <nav class="navbar sticky-top flex ">   
   <div class="header">
+    <img class="logo" src="img/napitok.png" alt="">
    <a class="nav-link hachi-maru-pop-regular " aria-current="page" href="#maen">Главная</a>
                   <a class="nav-link  hachi-maru-pop-regular" href="#">О нас</a>
                       <a class="nav-link  hachi-maru-pop-regular" href="#carouselExampleInterval">Команда</a>
                         <a class="nav-link hachi-maru-pop-regular" href="#">Цена</a>
                             <!-- <i class="bi bi-people-fill " style="font-size: 3rem;"></i>  -->
                             <button class="knopka navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasnavbar" aria-controls="offcanvasnavbar">
-                                <span class="navbar-toggler-icon"></span> 
+                                 <i class=" bi bi-people-fill " style="font-size: 3rem;color: white;"></i> 
                             </button>  
  </div> 
              
                             
           <div class="offcanvas offcanvas-end zadnik" tabindex="-1" id="offcanvasnavbar" aria-labelledby="offcanvasnavbarlabel">
             <div class="offcanvas-header ">
-              <h5 class="offcanvas-title hachi-maru-pop-regular " id="offcanvasnavbarlabel">дополнительное меню</h5>
+              <h5 class="offcanvas-title hachi-maru-pop-regular " id="offcanvasnavbarlabel">Доп.Меню</h5>
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="закрыть"></button>
             </div>
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link " aria-current="page" href="#">что то будет</a>
+                  <a class="nav-link " aria-current="page" href="#">Обратная связь</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">как нас найти-></a>
-                </li>
-                
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="#">как нас найти</a>
+                </li> -->
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    чего желаете?
+                    ДОП
                   </a>
                   <ul class="dropdown-menu bg-traspo">
                     <li><a class="dropdown-item" href="#">написать нам</a></li>
@@ -99,16 +104,11 @@
             <div id="game">
                 <div id="timer"></div>
                 <div id="question-container"></div>
-                
-              
             </div>
-    
             <div id="loss">
                 <h2>Вы проиграли</h2>
-                <button class="button" onclick="startGame()">Начать заново</button>
-           
+                <button class="button zanovo" onclick="startGame()">Начать заново</button>
             </div>
-    
             <div id="win">
                 <h1>Поздравляем, вы можете продолжить</h1>
                 <button class="vigrish">Пройти Дальше</button>
@@ -135,23 +135,16 @@
                     <p>Любимые сорта кофе: Эфиопия, Колумбия</p>
                     <p>Хобби: Фотография, путешествия</p>
                 </div>
-                <div class="page">
+                <!-- <div class="page">
                     <h2>Советы для начинающих</h2>
                     <p>1. Изучите различные виды кофе</p>
                     <p>2. Практикуйтесь с техникой приготовления</p>
                     <p>3. Обратите внимание на текстуру молока</p>
-                </div>
-                <div class="page">
-                    <h2>Рецепты</h2>
-                    <p>Латте:</p>
-                    <p>- Эспрессо: 1 порция</p>
-                    <p>- Парное молоко: 200 мл</p>
-                    <p>- Молочная пена: по вкусу</p>
-                </div>
+                </div> -->
                 <div class="page">
                     <h2>Обратная связь</h2>
                     <p>Контакты для связи:</p>
-                    <p>Почта: алексей@кофулюбитель.ком</p>
+                    <p>Почта: алексей@любитель</p>
                     <p>Инста: @бариста.алексей</p>
                 </div>
                 <div class="buttons ">
@@ -248,28 +241,74 @@
                 
             </div>  
     </div>             
-
-<!-- <div class="menu">
+    <div class="menu">
+      <h1>Наше приворотное меню</h1>
+      <div class="coffee-card-container">
+          <div class="card" id="card-1">
+              <img class="card-img-top" src="img/latee.jpg" alt="">
+              <div class="card-body">
+                  <h5 class="card-title">Сливочное латте</h5>
+                  <p class="card-text">Нежный и обволакивающий латте с добавлением сливочного крема</p>
+              </div>
+              <div class="card-body">
+                  <a href="#" class="card-link silka" data-target="card-2">Следующий кофе</a>
+                  <a href="#" class="card-link"><i class="bi bi-star" style="width: 50px;"></i></a>
+              </div>
+          </div>
+  
+          <div class="card hidden" id="card-2">
+              <img class="card-img-top" src="img/espreso.png" alt=" ">
+              <div class="card-body">
+                  <h5 class="card-title">Эспрессо</h5>
+                  <p class="card-text">Классический и обволакивающий эспрессо </p>
+              </div>
+              <div class="card-body">
+                  <a href="#" class="card-link silka" data-target="card-3">Следующий кофе</a>
+                  <a href="#" class="card-link silka" data-target="card-1">Предыдущий кофе</a>
+                  <a href="#" class="card-link"><i class="bi bi-star" style="width: 50px;"></i></a>
+              </div>
+          </div>
+  
+          <div class="card hidden" id="card-3">
+              <img class="card-img-top" src="img/cappuccino.jpg" alt="">
+              <div class="card-body">
+                  <h5 class="card-title">Капучино</h5>
+                  <p class="card-text">Классический капучино с нежной пенкой </p>
+              </div>
+              <div class="card-body">
+                  <a href="#" class="card-link silka" data-target="card-4">Следующий кофе</a>
+                  <a href="#" class="card-link silka" data-target="card-2">Предыдущий кофе</a>
+                  <a href="#" class="card-link"><i class="bi bi-star" style="width: 50px;"></i></a>
+              </div>
+          </div>
+  
+          <div class="card hidden" id="card-4">
+              <img class="card-img-top" src="img/americano.jpg" alt="">
+              <div class="card-body">
+                  <h5 class="card-title">Американо</h5>
+                  <p class="card-text">Бодрящий американо для настоящих ценителей </p>
+              </div>
+              <div class="card-body">
+                  <a href="#" class="card-link silka" data-target="card-5">Следующий кофе</a>
+                   <a href="#" class="card-link silka" data-target="card-3">Предыдущий кофе</a>
+                  <a href="#" class="card-link"><i class="bi bi-star" style="width: 50px;"></i></a>
+              </div>
+          </div>
+  
+          <div class="card hidden" id="card-5">
+              <img class="card-img-top" src="img/mocha.jpg" alt="">
+              <div class="card-body">
+                  <h5 class="card-title">Мокко</h5>
+                  <p class="card-text">Изысканный мокко с шоколадом и взбитыми сливками </p>
+              </div>
+              <div class="card-body">
+                  <a href="#" class="card-link silka" data-target="card-1">Следующий кофе</a>
+                    <a href="#" class="card-link silka" data-target="card-4">Предыдущий кофе</a>
+                  <a href="#" class="card-link"><i class="bi bi-star" style="width: 50px;"></i></a>
+              </div>
+          </div>
       </div>
-      <div class="wrapper">
-        <div class="card">
-          <div class="front">
-            <h1>Signature</h1>
-            <p>7.7 deck<span>2018</span></p>
-            <p class="price">$ 89.00</p>
-          </div>
-          <div class="right">
-            <h2>Signature</h2>
-            <ul>
-              <li>Width 7.7"</li>
-              <li>Length  31.75"</li>
-              <li>Wheelbase 14"</li>
-              <li>Nose  6.875"</li>
-              <li>Tail  6.25"</li>
-            </ul>
-            <button>Add to cart, yo</button>
-          </div>
-        </div>   -->
+  </div>
        
 </body>
 </html>
