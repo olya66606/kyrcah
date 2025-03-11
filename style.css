@@ -48,7 +48,7 @@ align-items: center;
   font-family: "Ponomar", system-ui;
   font-weight: 400;
   font-style: normal;
-  font-size: 30px;
+  font-size: 20px;
   color: rgb(255, 255, 255);
 
 }
@@ -68,8 +68,8 @@ align-items: center;
 .fotki{
   width: 700px;
   height: 700px;
-  margin: 80px  68px;
-  border-radius: 100%;
+  margin: 10px 138px;
+  border-radius: 60px;
   border: 7px solid white;
 }
 .obvodka{
@@ -78,7 +78,7 @@ width: 1650px;
 height: 850px;
 margin: 50px auto;
 border: 4px solid black;
-border-radius: 30px;
+border-radius: 60px;
 }
 .info{
   padding: 90px;
@@ -131,44 +131,6 @@ height: 820px;
 }
 /*_____________________________________________________________________________________________*/
 
-.notebook {
-  width: 500px;
-  margin-top:150px ;
-  margin-left: 200px;
-  height: 450px;
-  border-radius: 60px;
-  padding: 10px;
-  background-color: white;
-  box-shadow: 6px 15px 65px black;
-}
-.page {
-  display: none;
-  padding: 30px;
-}
-.active {
-  display: block;
-}
-.buttons {
-  text-align: center;
-  margin-top: 10px;
-  border-radius: 30px;
-}
-button {
-  padding: 5px 10px;
-  margin: 0 5px;
-  border-radius: 30px;
-  
-}
-
-.page>p{
-font-family: "Comfortaa", sans-serif;
-font-weight: 200;
-color: rgba(0, 0, 0, 0.884);}
-.page>h2{
-  font-family: "Comfortaa", sans-serif;
-  font-weight: 900;
-  color: rgba(0, 0, 0, 0.884);}
-
 .vpered{
   width: 100px;
   height: 40px;
@@ -201,7 +163,7 @@ color: rgba(0, 0, 0, 0.884);}
 /*_____________________________________________________________________________________________*/
 
 .left{
-  margin: 20px auto;
+  margin: -23px auto;
 }
 
 #container {
@@ -391,17 +353,22 @@ margin-top: -10px;
   font-size: 20px;
   color: rgb(255, 255, 255);
   border-radius: 20px;
-  font-family: "Comfortaa", sans-serif;
-}
+  font-family: "Ponomar", system-ui;
 
+}
+.vigrish>a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
 
 .start{
-  font-family: "Comfortaa", sans-serif;
-  font-weight: 200;
+  font-family: "Ponomar", system-ui;
+  font-weight: 100;
   font-style: normal;
+  font-size: 25px;
 }
 .zanovo{
-  font-family: "Comfortaa", sans-serif;
+  font-family: "Ponomar", system-ui;
   width: 300px;
 }
 
@@ -411,12 +378,12 @@ margin-top: -10px;
 
 .menu {
   font-family: 'Arial', sans-serif;
-  background-color: #f8f8f8;
+  background-color: #f8f8f8e1;
   padding: 30px;
-  border-radius: 15px;
+  border-radius: 60px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 1700px;
+  width: 1650px;
   height: 900px;
   margin: 20px auto;
 }
@@ -516,4 +483,31 @@ margin-top: -10px;
 .silka {
   color: #555;
   font-weight: normal;
+}
+
+.aboutme{
+  display: flex;
+  width: 1650px;
+  height: 850px;
+}
+.rigt{
+  width: 600px;
+  height: 500px;
+  background-color: #ffffffe0;
+  margin: 50px auto;
+  border-radius: 20px;
+}
+.lift{
+  width: 900px;
+  margin: 0 auto;
+}
+
+.rigt>h1{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+#accordionFlushExample{
+  background-color: #000000;
 }
