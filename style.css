@@ -487,19 +487,21 @@ margin-top: -10px;
 
 .aboutme{
   display: flex;
+  justify-content: space-between;
   width: 1650px;
   height: 850px;
+  margin: 0 auto;
 }
 .rigt{
-  width: 600px;
-  height: 500px;
+  width: 700px;
+  height: 520px;
   background-color: #ffffff;
-  margin: 50px auto;
+  margin: 90px 100px;
   border-radius: 20px;
 }
 .lift{
   width: 900px;
-  margin: 0 auto;
+  margin: 20px -110px;
 }
 
 .rigt>h1{
@@ -508,6 +510,6 @@ margin-top: -10px;
   font-size: 30px;
 }
 
-#accordionFlushExample{
-  background-color: #000000;
+.zagolovok{
+  font-size: 30px;
 }
