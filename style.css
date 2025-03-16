@@ -516,12 +516,115 @@ margin-top: -10px;
 /*_____________________________________________________________________________________________*/
 
 
+.landing-block {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+  text-align: center;
+  width: 1650px;
+  margin: 0 auto;
+  border-radius: 50px;
+}
+
+.container {
+  width: 85%;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+
+#testimonials h2 {
+  font-size: 2.5em;
+  color: #4a235a;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials-slider {
+  display: flex;
+  padding-bottom: 20px;
+  -webkit-overflow-scrolling: touch; 
+}
+
+.testimonial {
+  flex: 0 0 300px; 
+  width: 300px;
+  margin: 0 15px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  text-align: left;
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  scroll-snap-align: start; 
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.testimonial .quote {
+  font-style: italic;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.testimonial .author {
+  font-weight: bold;
+  color: #4a235a;
+  text-align: right;
+  font-size: 1.1em;
+}
+
+
+.testimonial:nth-child(odd) {
+  animation: slideInLeft 1s ease forwards;
+}
+
+.testimonial:nth-child(even) {
+  animation: slideInRight 1s ease forwards;
+}
+
+@keyframes slideInLeft {
+  0% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+/*_____________________________________________________________________________________________*/
+
 footer {
     background-color: #ffffffc5;
     color: #000000;
     padding: 50px 0;
     position: relative; 
     overflow: hidden; 
+    margin-top: 60px;
     border-top: 5px solid #a0522d; 
 }
 
