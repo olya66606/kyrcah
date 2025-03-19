@@ -45,29 +45,7 @@
             }
         }
 
-        function checkAnswer(answerIndex) {
-            const correctIndex = questions[currentQuestionIndex].correct;
-            if (answerIndex === correctIndex) {
-                currentQuestionIndex++;
-                loadQuestion();
-            } else {
-                gameOver();
-            }
-        }
-
-        function winGame() {
-            clearInterval(timer);
-            document.getElementById("win").style.display = "block";
-            document.getElementById("game").style.display = "none";
-        }
-
-        function gameOver() {
-            clearInterval(timer);
-            document.getElementById("loss").style.display = "block";
-            document.getElementById("game").style.display = "none";
-        }
-
-
+     
 //_________________________________________________________________\\
         
 
@@ -152,3 +130,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', checkTestimonials);
 });
+
+

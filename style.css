@@ -129,6 +129,11 @@ height: 820px;
 .right{
   margin: 10px -692px;
 }
+
+.zvezda:hover{
+  color: rgb(255, 8, 0);  
+}
+
 /*_____________________________________________________________________________________________*/
 
 .vpered{
@@ -163,7 +168,7 @@ height: 820px;
 /*_____________________________________________________________________________________________*/
 
 .left{
-  margin: -23px auto;
+  margin: -10px auto;
 }
 
 #container {
@@ -232,7 +237,7 @@ height: 820px;
 #cup {
   width: 100px;
   height: 80px;
-  background-color: #8B4513; /* Coffee color */
+  background-color: #8B4513;
   border-radius: 0 0 50px 50px;
  margin: 0 auto;
   position: relative;
@@ -265,7 +270,6 @@ height: 820px;
   margin: 10px auto;
 }
 
-/* Game Styles */
 p{
   color: #000000;
   font-family: "Comfortaa", sans-serif;
@@ -444,7 +448,7 @@ margin-top: -10px;
   border-bottom: 1px solid #eee;
 }
 
-/* Card Body Styles (Common) */
+
 .card-body {
   padding: 20px;
   text-align: left;
@@ -462,7 +466,7 @@ margin-top: -10px;
   line-height: 1.6;
 }
 
-/* Card Link Styles (Common) */
+
 .card-link {
   color: #a0522d;
   text-decoration: none;
