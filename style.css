@@ -41,15 +41,17 @@ align-items: center;
 .navi{
   background-color: rgb(255, 255, 255);
 }
-.hachi-maru-pop-regular, li,ul,p,h1,h2, .nav-link{
-  /* font-family: "Shafarik", system-ui;
-  font-weight: 300;
-  font-style: normal; */
-  font-family: "Ponomar", system-ui;
+.hachi-maru-pop-regular{
   font-weight: 400;
+  font-family: "Ponomar", system-ui;
   font-style: normal;
   font-size: 20px;
   color: rgb(255, 255, 255);
+
+}
+.dop   {
+  font-family: "Ponomar", system-ui;
+  font-size: 20px;
 
 }
 
@@ -134,6 +136,11 @@ height: 820px;
   color: rgb(255, 8, 0);  
 }
 
+.barista p{
+  color: black;
+  font-family: "Comfortaa", system-ui;
+}
+
 /*_____________________________________________________________________________________________*/
 
 .vpered{
@@ -168,7 +175,7 @@ height: 820px;
 /*_____________________________________________________________________________________________*/
 
 .left{
-  margin: -10px auto;
+  margin: 50px auto;
 }
 
 #container {
@@ -182,7 +189,6 @@ height: 820px;
 
 }
 
-/* Coffee Cup Styles */
 #coffee-steam {
   position: relative;
     height: 150px;
@@ -270,10 +276,10 @@ height: 820px;
   margin: 10px auto;
 }
 
-p{
+#question-container p{
   color: #000000;
-  font-family: "Comfortaa", sans-serif;
-  font-optical-sizing: auto;
+  font-family: "Comfortaa", system-ui;
+  font-size: 25px;
   font-weight:50;
   font-style: normal;
 
@@ -302,6 +308,7 @@ button[ onclick="checkAnswer(0)"], button[ onclick="checkAnswer(1)"], button[ on
   border: none;
   padding: 10px;
   color: white;
+  font-family: "Comfortaa", system-ui;
 }
 
 .button:hover {
@@ -318,14 +325,14 @@ button[ onclick="checkAnswer(0)"], button[ onclick="checkAnswer(1)"], button[ on
   font-weight: bold;
   color: #8b4513a4;
   margin-bottom: 10px;
-  font-family: "Comfortaa", sans-serif;
+  font-family: "Comfortaa", system-ui;
 }
 
 #question-container {
   font-size: 18px;
   color: #555;
   margin-bottom: 15px;
-  font-family: "Comfortaa", sans-serif;
+  font-family: "Ponomar", system-ui;
 }
 
 #loss h2, #win h2 {
@@ -347,6 +354,10 @@ margin-top: -10px;
 #win h2{
   font-size: 35px;
   color: #d2691e;
+}
+#win h1{
+  font-size: 29px;
+ 
 }
 .vigrish{
   background-color: #8B4513;

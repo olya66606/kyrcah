@@ -43,7 +43,7 @@ function loadQuestion() {
             <button onclick="checkAnswer(2)">${q.answers[2]}</button>
         `;
     } else {
-        clearInterval(timer); // Очищаем таймер при победе
+        clearInterval(timer); 
         winGame();
     }
 }
@@ -51,7 +51,7 @@ function loadQuestion() {
 function checkAnswer(answerIndex) {
     if (answerIndex === questions[currentQuestionIndex].correct) {
         currentQuestionIndex++;
-        loadQuestion(); // Загружаем следующий вопрос
+        loadQuestion(); 
     } else {
         clearInterval(timer);
         gameOver();
