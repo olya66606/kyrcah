@@ -1,49 +1,77 @@
- const questions = [
-            { question: "Какой кофе содержит молоко?", answers: ["Эспрессо", "Капучино", "Американо"], correct: 1 },
-            { question: "Кофе, на основе сливок?", answers: ["Фильтр-кофе", "Раф", "Эспрессо"], correct: 1 },
-            { question: "Какой кофе имеет крепкий вкус?", answers: ["Латте", "Эспрессо", "Капучино"], correct: 1 },
-            { question: "Что из этого напиток?", answers: ["Личи", "Мокко", "Мандарин"], correct: 1 },
-            { question: "Кофе c молоком?", answers: ["Латте", "Американо", "Эспрессо"], correct: 0 }
-        ];
-        let timer;
-        let timeLeft = 60; 
-        let currentQuestionIndex = 0;
+const questions = [
+    { question: "Какой кофе содержит молоко?", answers: ["Эспрессо", "Капучино", "Американо"], correct: 1 },
+    { question: "Кофе, на основе сливок?", answers: ["Фильтр-кофе", "Раф", "Эспрессо"], correct: 1 },
+    { question: "Какой кофе имеет крепкий вкус?", answers: ["Латте", "Эспрессо", "Капучино"], correct: 1 },
+    { question: "Что из этого напиток?", answers: ["Личи", "Мокко", "Мандарин"], correct: 1 },
+    { question: "Кофе c молоком?", answers: ["Латте", "Американо", "Эспрессо"], correct: 0 }
+];
+let timer;
+let timeLeft = 60;
+let currentQuestionIndex = 0;
 
-        function startGame() {
-            document.getElementById("game").style.display = "block";
-            document.getElementById("loss").style.display = "none";
-            document.getElementById("win").style.display = "none";
-            currentQuestionIndex = 0;
-            timeLeft = 60;
-            loadQuestion();
-            startTimer();
-        }
+function startGame() {
+    document.getElementById("game").style.display = "block";
+    document.getElementById("loss").style.display = "none";
+    document.getElementById("win").style.display = "none";
+    document.querySelector(".igra").style.display = "none";
+    document.querySelector(".start").style.display = "none";
+    currentQuestionIndex = 0;
+    timeLeft = 60;
+    loadQuestion();
+    startTimer();
+}
 
-        function startTimer() {
-            document.getElementById("timer").textContent = "Время: " + timeLeft + " секунд";
-            timer = setInterval(() => {
-                timeLeft--;
-                document.getElementById("timer").textContent = "Время: " + timeLeft + " секунд";
-                if (timeLeft <= 0) {
-                    clearInterval(timer);
-                    gameOver();
-                }
-            }, 1000);
+function startTimer() {
+    document.getElementById("timer").textContent = "Время: " + timeLeft + " секунд";
+    timer = setInterval(() => {
+        timeLeft--;
+        document.getElementById("timer").textContent = "Время: " + timeLeft + " секунд";
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            gameOver();
         }
+    }, 1000);
+}
 
-        function loadQuestion() {
-            if (currentQuestionIndex < questions.length) {
-                const q = questions[currentQuestionIndex];
-                document.getElementById("question-container").innerHTML = `
-                    <p>${q.question}</p>
-                    <button onclick="checkAnswer(0)">${q.answers[0]}</button>
-                    <button onclick="checkAnswer(1)">${q.answers[1]}</button>
-                    <button onclick="checkAnswer(2)">${q.answers[2]}</button>
-                `;
-            } else {
-                winGame();
-            }
-        }
+function loadQuestion() {
+    if (currentQuestionIndex < questions.length) {
+        const q = questions[currentQuestionIndex];
+        document.getElementById("question-container").innerHTML = `
+            <p>${q.question}</p>
+            <button onclick="checkAnswer(0)">${q.answers[0]}</button>
+            <button onclick="checkAnswer(1)">${q.answers[1]}</button>
+            <button onclick="checkAnswer(2)">${q.answers[2]}</button>
+        `;
+    } else {
+        clearInterval(timer); // Очищаем таймер при победе
+        winGame();
+    }
+}
+
+function checkAnswer(answerIndex) {
+    if (answerIndex === questions[currentQuestionIndex].correct) {
+        currentQuestionIndex++;
+        loadQuestion(); // Загружаем следующий вопрос
+    } else {
+        clearInterval(timer);
+        gameOver();
+    }
+}
+
+
+function gameOver() {
+    document.getElementById("game").style.display = "none";
+    document.getElementById("loss").style.display = "block";
+
+}
+
+function winGame() {
+    document.getElementById("game").style.display = "none";
+    document.getElementById("win").style.display = "block";
+
+}
+
+
 
      
 //_________________________________________________________________\\
