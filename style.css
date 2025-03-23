@@ -49,6 +49,10 @@ align-items: center;
   color: rgb(255, 255, 255);
 
 }
+
+.hachi-maru-pop, .zagolovok{
+  font-family: "Ponomar", system-ui;
+}
 .dop   {
   font-family: "Ponomar", system-ui;
   font-size: 20px;
@@ -132,6 +136,7 @@ height: 820px;
   margin: 10px -692px;
 }
 
+
 .zvezda:hover{
   color: rgb(255, 8, 0);  
 }
@@ -141,6 +146,12 @@ height: 820px;
   font-family: "Comfortaa", system-ui;
 }
 
+.zvezdochka{
+  padding: 20px;
+}
+.nazvanie{
+  font-family: "Ponomar", system-ui;
+}
 /*_____________________________________________________________________________________________*/
 
 .vpered{
@@ -346,6 +357,7 @@ button[ onclick="checkAnswer(0)"], button[ onclick="checkAnswer(1)"], button[ on
 
 .igra{
   font-size: 50px;
+  font-family: "Ponomar", system-ui;
 
 }
 .start, .cup{
@@ -357,6 +369,7 @@ margin-top: -10px;
 }
 #win h1{
   font-size: 29px;
+  font-family: "Ponomar", system-ui;
  
 }
 .vigrish{
