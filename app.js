@@ -160,3 +160,31 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+/*_____________________________________________________________________________________________*/
+document.addEventListener('DOMContentLoaded', function() {
+    const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+
+    function checkElements() {
+        elementsToAnimate.forEach(element => {
+            if (isElementInViewport(element)) {
+                element.classList.add('active');
+            }
+        });
+    }
+
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    // Initial check
+    checkElements();
+
+    // On scroll
+    window.addEventListener('scroll', checkElements);
+});

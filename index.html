@@ -24,47 +24,48 @@
 </head>
 <body>
    
- <nav class="navbar sticky-top flex fixed-top ">   
+ <nav class="navbar sticky-top flex fixed-top ">    
+  <img class="logo" src="img/logotip.png" alt="">
   <div class="header">
-    <img class="logo" src="img/logotipchek.png" alt="">
+
    <a class="nav-link hachi-maru-pop-regular " aria-current="page" href="#maen">Главная</a>
                   <a class="nav-link  hachi-maru-pop-regular" href="#menu">Меню</a>
                       <a class="nav-link  hachi-maru-pop-regular" href="#aboutme">Команда</a>
                         <a class="nav-link hachi-maru-pop-regular" href="#">Цена</a>
-                            <button class="knopka navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasnavbar" aria-controls="offcanvasnavbar">
-                                 <i class=" bi bi-people-fill " style="font-size: 2rem;color: white;"></i> 
+                            <button style="border: 2px solid black;" class="knopka navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasnavbar" aria-controls="offcanvasnavbar">
+                                 <i class=" bi bi-people-fill " style="font-size: 2rem;color: black;"></i> 
                             </button>  
  </div> 
              
                             
           <div class="offcanvas offcanvas-end zadnik" tabindex="-1" id="offcanvasnavbar" aria-labelledby="offcanvasnavbarlabel">
             <div class="offcanvas-header ">
-              <h5 class="offcanvas-title hachi-maru-pop-regular " id="offcanvasnavbarlabel">Доп.Меню</h5>
+              <h5 class="offcanvas-title hachi-maru-pop-regular " id="offcanvasnavbarlabel">Выручалочка</h5>
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="закрыть"></button>
             </div>
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link  hachi-maru-pop-regular " aria-current="page" href="#testimonials">Отзывы</a>
+                  <a class="nav-link  hachi-maru-pop-regular " aria-current="page" href="#">Зайти в личный кабинет</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle hachi-maru-pop-regular" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    ДОП
+                   Отзывы
                   </a>
                   <ul class="dropdown-menu bg-traspo dop">
-                    <li><a class="dropdown-item " href="#footer">написать нам</a></li>
-                    <li><a class="dropdown-item "  href="#footer">заказать доставку</a></li>
+                    <li><a class="dropdown-item " href="#footer">Написать нам</a></li>
+                    <li><a class="dropdown-item "  href="#footer">Заказать доставку</a></li>
                     <li>
                       <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item " href="#">оставить отзыв</a></li>
+                    <li><a class="dropdown-item " href="#">Оставить отзыв</a></li>
                   </ul>
                 </li>
               </ul>
               <p></p>
               <form class="d-flex mt-3" role="search">
-                <input class="form-control me-2 hachi-maru-pop-regular " type="search" placeholder="поиск" aria-label="поиск">
-                <button class="btn btn-outline-light  hachi-maru-pop-regular " type="submit">найдем</button>
+                <input class="form-control me-2 hachi-maru-pop-regular text-center " type="search" placeholder="Начать" aria-label="поиск">
+                <button class="btn btn-outline-light  hachi-maru-pop-regular " type="submit">БУМ</button>
               </form>
             </div>
           </div>
@@ -289,12 +290,69 @@
       </div>
   </div>
 </section>
- 
+
+
+<section id="pricing" class="landing-block">
+  <div class="container">
+      <h2  class="  hachi-maru-pop-regular">Наш Прайс</h2>
+      <p class="intro-text">Погрузитесь в мир ароматного кофе и выберите свой идеальный напиток или зерна.</p>
+
+      <div class="pricing-tables">
+          <div class="pricing-table animate-on-scroll">
+              <h3  class="  hachi-maru-pop-regular">Кофейные зерна</h3>
+              <div class="price-item">
+                  <img src="img/travinoi.png" alt="Эфиопия Иргачеффе">
+                  <h4>Эфиопия Иргачеффе</h4>
+                  <p>250г - 450 руб.</p>
+              </div>
+              <div class="price-item">
+                  <img src="img/coldcofe.png" alt="Бразилия Сантос">
+                  <h4>Бразилия Сантос</h4>
+                  <p>250г - 380 руб.</p>
+              </div>
+              <div class="price-item">
+                  <img src="img/zeleni.png" alt="Колумбия Супремо">
+                  <h4>Колумбия Супремо</h4>
+                  <p>250г - 420 руб.</p>
+              </div>
+              <a href="#" class="cta-button">Купить зерна</a>
+          </div>
+
+          <div class="pricing-table animate-on-scroll">
+              <h3  class="  hachi-maru-pop-regular">Напитки</h3>
+              <div class="price-item">
+                  <img src="img/espreso.png" alt="Эспрессо">
+                  <h4>Эспрессо</h4>
+                  <p>120 руб.</p>
+              </div>
+              <div class="price-item">
+                  <img src="img/zeleni.png" alt="Капучино">
+                  <h4>Капучино</h4>
+                  <p>180 руб.</p>
+              </div>
+              <div class="price-item">
+                  <img src="img/lati.png" alt="Латте">
+                  <h4>Латте</h4>
+                  <p>200 руб.</p>
+              </div>
+              <div class="price-item">
+                  <img src="img/coldcofe.png" alt="Американо">
+                  <h4>Американо</h4>
+                  <p>150 руб.</p>
+              </div>
+              <a href="#" class="cta-button">Заказать напиток</a>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
  <footer id="footer">
   <div class="footer-content">
       <div class="footer-logo">
-          <img src="img/logotipchek.png" class="logo" alt="Coffee Shop Logo">
-          <p>Brewing Happiness Since 2010</p>
+          <img src="img/logotip.png" class="logo" alt="Coffee Shop Logo">
+          <p >Brewing Happiness Since 2010</p>
       </div>
 
       <div class="footer-contact">
@@ -306,9 +364,9 @@
 
       <div class="footer-social">
           <h3>Мы в социальных сетях</h3>
-          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="bi bi-telegram"></i></a>
+          <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
       </div>
 
       <div class="footer-hours">
@@ -331,6 +389,10 @@
       <div class="bean"></div>
   </div>
 </footer>
+
+
+
+
 </body>
 </html>
 
