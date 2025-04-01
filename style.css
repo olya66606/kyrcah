@@ -143,7 +143,7 @@ height: 800px;
 
 .barista p{
   color: black;
-  font-family: "Comfortaa", system-ui;
+  font-family: "Kelly Slab", sans-serif;
 }
 
 .zvezdochka{
@@ -152,7 +152,85 @@ height: 800px;
 .nazvanie{
   font-family: "Ponomar", system-ui;
 }
+/*________________________________________Адаптив_____________________________________________________*/
+
+
+@media (max-width: 992px) { 
+  #main {
+      flex-direction: column;
+  }
+
+  .right, .left {
+      width: 100%;  
+      text-align: center; 
+  }
+
+  .right img.harry {
+      max-width: 80%; 
+  }
+
+  #cup-body {
+  width: 80px; 
+  height: 100px;
+  }
+  #cup-handle {
+      width: 30px;
+      height: 60px;
+  }
+  #saucer {
+  width: 120px;
+  height: 20px;
+  }
+
+  #coffee-steam {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 80px;
+      z-index: 10;
+  }
+
+}
+
+@media (max-width: 576px) { 
+  .right img.harry {
+      max-width: 90%;
+  }
+
+ 
+  #cup-body {
+      width: 60px;
+      height: 80px;
+  }
+  #cup-handle {
+      width: 20px;
+      height: 40px;
+  }
+  #saucer {
+      width: 100px;
+      height: 15px;
+  }
+
+ 
+  #coffee-steam {
+      width: 80px; 
+      height: 60px;
+  }
+
+
+
+}
+/*________________________________________Адаптив_____________________________________________________*/
+
+
 /*_____________________________________________________________________________________________*/
+
+
+
+
+
 
 .vpered{
   width: 100px;
@@ -336,7 +414,7 @@ button[ onclick="checkAnswer(0)"], button[ onclick="checkAnswer(1)"], button[ on
   font-weight: bold;
   color: #8b4513a4;
   margin-bottom: 10px;
-  font-family: "Comfortaa", system-ui;
+  font-family: "Kelly Slab", sans-serif;
 }
 
 #question-container {
@@ -654,6 +732,7 @@ footer {
     overflow: hidden; 
     margin-top: 100px;
     border-top: 5px solid #a0522d; 
+
 }
 
 .footer-content {
@@ -811,7 +890,6 @@ footer {
 }
 
 
-
 .container {
   width: 85%;
   width: 1300px;
@@ -826,7 +904,7 @@ footer {
 }
 
 #pricing .intro-text {
-  font-size: 1.1em;
+  font-size: 2.1em;
   color: #555;
   margin-bottom: 40px;
   font-family: "Ponomar", system-ui;
@@ -847,6 +925,7 @@ footer {
   flex: 0 0 350px;
   margin: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
 }
 
 .pricing-table:hover {
