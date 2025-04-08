@@ -1,6 +1,28 @@
 /*____________________________________________Крутилка меню_________________________________________________*/
+document.addEventListener('DOMContentLoaded', () => {
+    const menuItems = document.querySelectorAll('.menu-item');
+    const selectedItemDiv = document.getElementById('selected-item');
+    const selectedImage = document.getElementById('selected-image');
+    const itemName = document.getElementById('item-name');
+    const itemPrice = document.getElementById('item-price');
 
+    menuItems.forEach(item => {
+        item.addEventListener('click', (event) => {
+            event.preventDefault(); 
 
+            const itemNameValue = item.dataset.name;
+            const itemPriceValue = item.dataset.price;
+            const imageUrl = item.src;
+
+          
+            selectedImage.src = imageUrl;
+            itemName.textContent = itemNameValue;
+            itemPrice.textContent = `Price: $${itemPriceValue}`; 
+
+            selectedItemDiv.style.display = 'block';
+        });
+    });
+});
 /*___________________________________________________________________________________________________________*/
 
 const questions = [
