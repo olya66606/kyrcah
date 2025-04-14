@@ -210,9 +210,24 @@ document.addEventListener('DOMContentLoaded', function() {
         );
     }
 
-    // Initial check
+    
     checkElements();
 
-    // On scroll
+  
     window.addEventListener('scroll', checkElements);
 });
+
+
+
+
+/*_____________________________________________________________________________________________*/
+
+document.querySelectorAll('.like-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const countElement = button.nextElementSibling;
+        let count = parseInt(countElement.textContent);
+        countElement.textContent = count + 1;
+    });
+});
+
+
