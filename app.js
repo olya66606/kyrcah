@@ -221,13 +221,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 /*_____________________________________________________________________________________________*/
-
-document.querySelectorAll('.like-btn').forEach(button => {
-    button.addEventListener('click', () => {
-        const countElement = button.nextElementSibling;
-        let count = parseInt(countElement.textContent);
-        countElement.textContent = count + 1;
+document.querySelectorAll('.carousel_otzivi').forEach(carousel => {
+    let currentIndex = 0;
+    const slides = carousel.querySelectorAll('.carousel_item_otziv');
+    const totalSlides = slides.length;
+    const inner = carousel.querySelector('.carousel_inner_otziv');
+    function showSlide(idx) {
+        currentIndex = (idx + totalSlides) % totalSlides;
+        inner.style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
+    }
+    carousel.querySelector('.next').onclick = () => showSlide(currentIndex + 1);
+    carousel.querySelector('.prev').onclick = () => showSlide(currentIndex - 1);
+    carousel.querySelectorAll('.like-btn').forEach(btn=>{
+        btn.onclick=()=>{let s=btn.nextElementSibling;s.textContent=+s.textContent+1}
     });
 });
-
+/*_____________________________________________________________________________________________*/
 

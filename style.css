@@ -302,179 +302,72 @@ height: 800px;
 
 
 
-/* 
-
-@media (max-width: 992px) { 
-  #main {
-      flex-direction: column;
-  }
-
-  .right, .left {
-      width: 100%;  
-      text-align: center; 
-  }
-
-  .right img.harry {
-      max-width: 80%; 
-  }
-
-  #cup-body {
-  width: 80px; 
-  height: 100px;
-  }
-  #cup-handle {
-      width: 30px;
-      height: 60px;
-  }
-  #saucer {
-  width: 120px;
-  height: 20px;
-  }
-
-  #coffee-steam {
-      position: absolute;
-      top: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 80px;
-      z-index: 10;
-  }
-
-}
-
-@media (max-width: 576px) { 
-  .right img.harry {
-      max-width: 90%;
-  }
-
- 
-  #cup-body {
-      width: 60px;
-      height: 80px;
-  }
-  #cup-handle {
-      width: 20px;
-      height: 40px;
-  }
-  #saucer {
-      width: 100px;
-      height: 15px;
-  }
-
- 
-  #coffee-steam {
-      width: 80px; 
-      height: 60px;
-  }
-
-
-
-} */
 /*________________________________________Отзывы_____________________________________________________*/
-
-
-
-.landing-block {
-  padding: 60px 0;
-  background-color: #f9f9f9;
-  text-align: center;
-  width: 1650px;
-  margin: 0 auto;
-  border-radius: 50px;
-}
-
-.container {
-  width: 85%;
-  width: 1200px;
-  margin: 0 auto;
-}
-
-
-#testimonials h2 {
-  font-size: 2.5em;
-  color: #4a235a;
-  margin-bottom: 40px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.testimonials-slider {
+.blockotzix{
   display: flex;
-  padding-bottom: 20px;
-  -webkit-overflow-scrolling: touch; 
+  justify-content: space-between;
+  width: 1600px;
+  margin: 0 auto;
 }
-
-.testimonial {
-  flex: 0 0 300px; 
-  width: 300px;
-  margin: 0 15px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-  padding: 25px;
-  text-align: left;
+.carousel_otzivi {
   position: relative;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  scroll-snap-align: start; 
+  width: 380px;
+  height: 300px;
+  margin: 100px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.805);
 }
 
-.testimonial:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+.carousel_inner_otziv {
+  display: flex;
+  transition: transform 0.3s ease;
 }
 
-.testimonial img {
-  width: 80px;
-  height: 80px;
+.carousel_item_otziv {
+  min-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+
+}
+
+.avatar {
+  width:90px;
+  height: 100px;
+  border-radius: 70px;
+  margin-top: 50px;
+}
+
+.like-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
   border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.testimonial .quote {
-  font-style: italic;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 10px;
+.prev:hover, .next:hover {
+  background-color: rgba(255, 255, 255, 1);
 }
 
-.testimonial .author {
-  font-weight: bold;
-  color: #4a235a;
-  text-align: right;
-  font-size: 1.1em;
+.prev {
+  left: 10px;
 }
 
-
-.testimonial:nth-child(odd) {
-  animation: slideInLeft 1s ease forwards;
+.next {
+  right: 10px;
 }
-
-.testimonial:nth-child(even) {
-  animation: slideInRight 1s ease forwards;
-}
-
-@keyframes slideInLeft {
-  0% {
-      transform: translateX(-100%);
-      opacity: 0;
-  }
-  100% {
-      transform: translateX(0);
-      opacity: 1;
-  }
-}
-
-@keyframes slideInRight {
-  0% {
-      transform: translateX(100%);
-      opacity: 0;
-  }
-  100% {
-      transform: translateX(0);
-      opacity: 1;
-  }
-} 
 
 /*_____________________________________________________________________________________________*/
 
@@ -771,7 +664,7 @@ footer {
     padding: 50px 0;
     position: relative; 
     overflow: hidden; 
-    margin-top: 100px;
+    margin-top: 50px;
     border-top: 5px solid #a0522d; 
 
 }

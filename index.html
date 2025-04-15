@@ -26,8 +26,8 @@
     <img class="logo" src="img/logotip.png" alt="">
     <div class="header">
                    <a class="nav-link hachi-maru-pop-regular " aria-current="page" href="#maen">Главная</a>
-                    <a class="nav-link  hachi-maru-pop-regular" href="#menu">Меню</a>
-                        <a class="nav-link  hachi-maru-pop-regular" href="#aboutme">Команда</a>
+                    <a class="nav-link  hachi-maru-pop-regular" href="#con">Меню</a>
+                        <a class="nav-link  hachi-maru-pop-regular" href="#baristablock">Команда</a>
                           <a class="nav-link hachi-maru-pop-regular" href="#con">Цена</a>
                           <div class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle  hachi-maru-pop-regular" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -36,7 +36,7 @@
                             <ul class="dropdown-menu">
                               <li><a class="dropdown-item   hachi-maru-pop-regular" href="#footer">Написать нам</a></li>
                               <li><a class="dropdown-item  hachi-maru-pop-regular"  href="#footer">Заказать доставку</a></li>
-                              <li><a class="dropdown-item  hachi-maru-pop-regular" href="#">Оставить отзыв</a></li>
+                              <li><a class="dropdown-item  hachi-maru-pop-regular" href="#footer">Оставить отзыв</a></li>
                             </ul>
                           </div>
    </div> 
@@ -106,8 +106,8 @@
  </div>
 </div>
 
-
-<div class="baristablock">
+ <h1 class="hachi-maru-pop-regular" style="text-align: center; font-size: 50px ;">Наша Команда бравых барист</h1>
+<div class="baristablock" id="baristablock">
         <div class="barista-card-container">
             <div class="barista-card">
                 <div class="image-container">
@@ -200,39 +200,76 @@
 </section>
 
 
-<section id="testimonials" class="landing-block">
-    <div class="container">
-        <h2 class=" hachi-maru-pop">Что о нас говорят</h2>
-        <div class="testimonials-slider">
-  
-            <div class="testimonial">
-                <img src="img/barista2.png" alt="Customer 1">
-                <p class="quote">"Прекрасное место, чтобы расслабиться и насладиться отличным кофе! Очень рекомендую!"</p>
-                <p class="author">- Анна</p>
+<!-- <h1 class="hachi-maru-pop-regular" style="text-align: center; font-size: 50px ;margin-top:100px ;">Что о нас думают</h1> -->
+<div class="blockotzix">
+    <div class="carousel_otzivi" id="carousel1">
+        <div class="carousel_inner_otziv">
+            <div class="carousel_item_otziv active">
+                <img src="img/coment4.jpg" alt="" class="avatar">
+                <h3>Анна И.</h3>
+                <p>Очень уютно, персонал доброжелательный!</p>
                 <button class="like-btn">❤️</button>
-                <span class="like-count">0</span>
+                <span class="like-count">12</span>
             </div>
-  
-            <div class="testimonial">
-                <img src="img/barista.png" alt="Customer 2">
-                <p class="quote">"Лучший латте-арт в городе! Всегда приятно зайти и выпить чашечку кофе, созданного с душой."</p>
-                <p class="author">- Дмитрий</p>
+            <div class="carousel_item_otziv">
+                <img src="img/coment2.jpg" alt="" class="avatar">
+                <h3>Дмитрий К.</h3>
+                <p>Все понравилось, особенно десерты.</p>
+                <button class="like-btn">❤️</button>
+                <span class="like-count">8</span>
             </div>
-  
-            <div class="testimonial">
-                <img src="img/barista3.png" alt="Customer 3">
-                <p class="quote">"Уютная атмосфера и вкусные десерты. Идеальное место для встречи с друзьями или работы."</p>
-                <p class="author">- Елена</p>
-            </div>
-            <div class="testimonial">
-              <img src="img/barista2.png" alt="Customer 1">
-              <p class="quote">""</p>
-              <p class="author">- Оля</p>
-          </div>
-  
         </div>
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
     </div>
-  </section>
+
+
+    <div class="carousel_otzivi" id="carousel2">
+        <div class="carousel_inner_otziv">
+            <div class="carousel_item_otziv active">
+                <img src="img/coment3.jpg" alt="" class="avatar">
+                <h3>Ольга Я.</h3>
+                <p>Широкий выбор напитков, спасибо!</p>
+                <button class="like-btn">❤️</button>
+                <span class="like-count">6</span>
+            </div>
+            <div class="carousel_item_otziv">
+                <img src="img/coment2.jpg" alt="" class="avatar">
+                <h3>Егор М.</h3>
+                <p>Вернусь еще, уютно работать здесь.</p>
+                <button class="like-btn">❤️</button>
+                <span class="like-count">13</span>
+            </div>
+        </div>
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+    </div>
+
+
+    <div class="carousel_otzivi" id="carousel3">
+        <div class="carousel_inner_otziv">
+            <div class="carousel_item_otziv active">
+                <img src="img/coment.jpg" alt="" class="avatar">
+                <h3>Ирина С.</h3>
+                <p>Лучшее место чтобы расслабиться!</p>
+                <button class="like-btn">❤️</button>
+                <span class="like-count">5</span>
+            </div>
+            <div class="carousel_item_otziv">
+                <img src="img/coment1.jpg" alt="" class="avatar">
+                <h3>Влад П.</h3>
+                <p>Доступные цены и крутая атмосфера.</p>
+                <button class="like-btn">❤️</button>
+                <span class="like-count">9</span>
+            </div>
+        </div>
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+    </div>
+</div>
+
+
+
 
 
  <footer id="footer">
