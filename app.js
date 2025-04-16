@@ -1,3 +1,37 @@
+/*Навбар*/
+let lastScroll = 0;
+const navbar = document.querySelector('.navbar');
+const navbarHeight = navbar.offsetHeight;
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
+  
+  if (currentScroll <= navbarHeight) {
+    navbar.classList.remove('hide');
+    return;
+  }
+  
+  if (currentScroll > lastScroll && !navbar.classList.contains('hide')) {
+    
+    navbar.classList.add('hide');
+  } else if (currentScroll < lastScroll && navbar.classList.contains('hide')) {
+   
+    navbar.classList.remove('hide');
+  }
+  
+  lastScroll = currentScroll;
+});
+
+
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+
+
 /*____________________________________________Крутилка меню_________________________________________________*/
 document.addEventListener('DOMContentLoaded', () => {
     const menuItems = document.querySelectorAll('.menu-item');
@@ -5,6 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectedImage = document.getElementById('selected-image');
     const itemName = document.getElementById('item-name');
     const itemPrice = document.getElementById('item-price');
+
+    // Плавное появление элементов меню
+    setTimeout(() => {
+        document.querySelector('.box').style.opacity = '1';
+    }, 100);
 
     menuItems.forEach(item => {
         item.addEventListener('click', (event) => {
@@ -14,16 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const itemPriceValue = item.dataset.price;
             const imageUrl = item.src;
 
-          
             selectedImage.src = imageUrl;
             itemName.textContent = itemNameValue;
-            itemPrice.textContent = `Price: $${itemPriceValue}`; 
+            itemPrice.textContent = `Price: $${itemPriceValue}`;
 
-            selectedItemDiv.style.display = 'block';
+            // Плавное появление выбранного элемента
+            selectedItemDiv.classList.add('show');
+            selectedItemDiv.style.display = 'flex';
         });
     });
 });
-
 
 /*___________________________________________________________________________________________________________*/
 const questions = [
@@ -50,10 +89,10 @@ function startGame() {
 }
 
 function startTimer() {
-    document.getElementById("timer").textContent = "Время: " + timeLeft + " секунд";
+    document.getElementById("timer-cup").textContent = "Осталось " + timeLeft + " ";
     timer = setInterval(() => {
         timeLeft--;
-        document.getElementById("timer").textContent = "Время: " + timeLeft + " секунд";
+        document.getElementById("timer-cup").textContent = "Осталось " + timeLeft + " ";
         if (timeLeft <= 0) {
             clearInterval(timer);
             gameOver();

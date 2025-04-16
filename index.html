@@ -21,64 +21,124 @@
     <title> cafe</title>
 </head>
 <body>
-   
-  <nav class="navbar sticky-top flex fixed-top ">    
-    <img class="logo" src="img/logotip.png" alt="">
-    <div class="header">
-                   <a class="nav-link hachi-maru-pop-regular " aria-current="page" href="#maen">Главная</a>
-                    <a class="nav-link  hachi-maru-pop-regular" href="#con">Меню</a>
-                        <a class="nav-link  hachi-maru-pop-regular" href="#baristablock">Команда</a>
-                          <a class="nav-link hachi-maru-pop-regular" href="#con">Цена</a>
-                          <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle  hachi-maru-pop-regular" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Дополнительные действия
-                            </a>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item   hachi-maru-pop-regular" href="#footer">Написать нам</a></li>
-                              <li><a class="dropdown-item  hachi-maru-pop-regular"  href="#footer">Заказать доставку</a></li>
-                              <li><a class="dropdown-item  hachi-maru-pop-regular" href="#footer">Оставить отзыв</a></li>
-                            </ul>
-                          </div>
-   </div> 
-  </nav> 
+    <nav class="navbar navbar-expand-lg sticky-top fixed-top">
+        <div class="header">
+          <a class="navbar-brand" href="#">
+            <img class="logo" src="img/logotip.png" alt="Логотип">
+          </a>        
+          <button class="navbar-toggler order-first" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="header navbar-nav">
+              <a class="nav-link hachi-maru-pop-regular" aria-current="page" href="#maen">Главная</a>
+              <a class="nav-link hachi-maru-pop-regular" href="#con">Меню</a>
+              <a class="nav-link hachi-maru-pop-regular" href="#baristablock">Команда</a>
+              <a class="nav-link hachi-maru-pop-regular" href="#con">Цена</a>
+              <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle hachi-maru-pop-regular" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Дополнительные действия
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item hachi-maru-pop-regular" href="#footer">Написать нам</a></li>
+                  <li><a class="dropdown-item hachi-maru-pop-regular" href="#footer">Заказать доставку</a></li>
+                  <li><a class="dropdown-item hachi-maru-pop-regular" href="#footer">Оставить отзыв</a></li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="profile-icon ms-auto">
+              <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#authModal">
+                <div class="profile-icon-wrapper">
+                    <i class="bi bi-person-square" data-bs-toggle="modal" data-bs-target="#authModal" style="font-size: 3rem;"></i>
+                </div>
+              </a>
+            </div>
+        </div>
+    </nav>
+      
+      <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title hachi-maru-pop-regular" id="authModalLabel">Вход в аккаунт</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="loginForm">
+                <div class="mb-3">
+                  <label for="loginEmail" class="form-label hachi-maru-pop-regular">Email</label>
+                  <input type="email" class="form-control" id="loginEmail" required>
+                </div>
+                <div class="mb-3">
+                  <label for="loginPassword" class="form-label hachi-maru-pop-regular">Пароль</label>
+                  <input type="password" class="form-control" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 hachi-maru-pop-regular">Войти</button>
+              </form>
+              
+              <div class="text-center mt-3">
+                <p class="hachi-maru-pop-regular">Нет аккаунта? <a href="#" id="showRegister">Зарегистрироваться</a></p>
+              </div>
+              
+              <form id="registerForm" style="display: none;">
+                <div class="mb-3">
+                  <label for="regName" class="form-label hachi-maru-pop-regular">Имя</label>
+                  <input type="text" class="form-control" id="regName" required>
+                </div>
+                <div class="mb-3">
+                  <label for="regEmail" class="form-label hachi-maru-pop-regular">Email</label>
+                  <input type="email" class="form-control" id="regEmail" required>
+                </div>
+                <div class="mb-3">
+                  <label for="regPassword" class="form-label hachi-maru-pop-regular">Пароль</label>
+                  <input type="password" class="form-control" id="regPassword" required>
+                </div>
+                <button type="submit" class="btn btn-success w-100 hachi-maru-pop-regular">Зарегистрироваться</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
 
    <main id="maen  vh-100">
-    <div class="right ">
-      <img  class="harry" src="img/harry-Photoroom.png" alt="">
+        <div class="right ">
+        <img  class="harry" src="img/harry-Photoroom.png" alt="">
+        </div>
+        <div class="left">
+            <div id="container">
+            
+                <div id="coffee-steam">
+                    <div class="steam" id="steam1"></div>
+                    <div class="steam" id="steam2"></div>
+                    <div class="steam" id="steam3"></div>
+                    <div class="steam" id="steam4"></div>
+                </div>
+                <div id="cup-container">
+                    <div id="cup">
+                        <div id="coffee-level"></div>
+                        <div id="cup-handle"></div>
+                        <div id="timer-cup"></div>
+                    </div>
+                    <div id="saucer"></div>
+                </div>
+        
+                <h1 class="igra">Сыграй со мной</h1>
+                <button class="button start" onclick="startGame()">Начать игру</button>
+                <div id="game">
+                    <div id="question-container"></div>
+                </div>
+                <div id="loss">
+                    <h2>Вы проиграли</h2>
+                    <button class="button zanovo" onclick="startGame()">Начать заново</button>
+                </div>
+                <div id="win">
+                    <h1>Поздравляем, вы можете продолжить</h1>
+                    <button class="vigrish"><a href="#con">Пройти Дальше</a></button>
+                </div>
+            </div>  
     </div>
-    <div class="left">
-          <div id="container">
-          
-            <div id="coffee-steam">
-                <div class="steam" id="steam1"></div>
-                <div class="steam" id="steam2"></div>
-                <div class="steam" id="steam3"></div>
-                <div class="steam" id="steam4"></div>
-            </div>
-            <div id="cup">
-                <div id="cup-body"></div>
-                <div id="cup-handle"></div>
-            </div>
-    
-            <div id="saucer"></div>
-    
-            <h1 class="igra">Сыграй со мной</h1>
-            <button class="button start" onclick="startGame()">Начать игру</button>
-            <div id="game">
-                <div id="timer"></div>
-                <div id="question-container"></div>
-            </div>
-            <div id="loss">
-                <h2>Вы проиграли</h2>
-                <button class="button zanovo" onclick="startGame()">Начать заново</button>
-            </div>
-            <div id="win">
-                <h1>Поздравляем, вы можете продолжить</h1>
-                <button class="vigrish"><a href="#con">Пройти Дальше</a></button>
-            </div>
-        </div>  
-</div>
-      </main> 
+</main> 
    
 
 <div class="con" id="con">
@@ -145,59 +205,6 @@
 
 
 
-<section id="pricing" class="landing-block">
-  <div class="container">
-      <h2  class="  hachi-maru-pop-regular">Наш Прайс</h2>
-      <p class="intro-text">Погрузитесь в мир ароматного кофе и выберите свой идеальный напиток или зерна.</p>
-
-      <div class="pricing-tables">
-          <div class="pricing-table animate-on-scroll">
-              <h3  class="  hachi-maru-pop-regular">Кофейные зерна</h3>
-              <div class="price-item">
-                  <img src="img/zerno.png" alt="Эфиопия Иргачеффе">
-                  <h4>Эфиопия Иргачеффе</h4>
-                  <p>250г - 450 руб.</p>
-              </div>
-              <div class="price-item">
-                  <img src="img/zerno1.png" alt="Бразилия Сантос">
-                  <h4>Бразилия Сантос</h4>
-                  <p>250г - 380 руб.</p>
-              </div>
-              <div class="price-item">
-                  <img src="img/zerno2.png" alt="Колумбия Супремо">
-                  <h4>Колумбия Супремо</h4>
-                  <p>250г - 420 руб.</p>
-              </div>
-              <a href="#" class="cta-button">Купить зерна</a>
-          </div>
-
-          <div class="pricing-table animate-on-scroll">
-              <h3  class="  hachi-maru-pop-regular">Напитки</h3>
-              <div class="price-item">
-                  <img src="img/espreso.png" alt="Эспрессо">
-                  <h4>Эспрессо</h4>
-                  <p>120 руб.</p>
-              </div>
-              <div class="price-item">
-                  <img src="img/zeleni.png" alt="Капучино">
-                  <h4>Капучино</h4>
-                  <p>180 руб.</p>
-              </div>
-              <div class="price-item">
-                  <img src="img/lati.png" alt="Латте">
-                  <h4>Латте</h4>
-                  <p>200 руб.</p>
-              </div>
-              <div class="price-item">
-                  <img src="img/coldcofe.png" alt="Американо">
-                  <h4>Американо</h4>
-                  <p>150 руб.</p>
-              </div>
-              <a href="#" class="cta-button">Заказать напиток</a>
-          </div>
-      </div>
-  </div>
-</section>
 
 
 <!-- <h1 class="hachi-maru-pop-regular" style="text-align: center; font-size: 50px ;margin-top:100px ;">Что о нас думают</h1> -->
