@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-/*___________________________________________________________________________________________________________*/
+/*__________________________________________OSnova_________________________________________________________________*/
 const questions = [
     { question: "Какой кофе содержит молоко?", answers: ["Эспрессо", "Капучино", "Американо"], correct: 1 },
     { question: "Кофе, на основе сливок?", answers: ["Фильтр-кофе", "Раф", "Эспрессо"], correct: 1 },
@@ -140,126 +140,8 @@ function winGame() {
 
 
 
-     
-//_________________________________________________________________\\
-        
 
-        let currentPage = 0;
-        const pages = document.querySelectorAll('.page');
-    
-        function showPage(index) {
-            pages.forEach((page, i) => {
-                page.classList.toggle('active', i === index);
-            });
-        }
-    
-        function nextPage() {
-            currentPage = (currentPage + 1) % pages.length;
-            showPage(currentPage);
-        }
-    
-        function prevPage() {
-            currentPage = (currentPage - 1 + pages.length) % pages.length;
-            showPage(currentPage);
-        }
-
-
-//_________________________________________________________________\\
-   
-document.addEventListener('DOMContentLoaded', function () {
-    function setupCarousel(containerClass) {
-        const containers = document.querySelectorAll(containerClass);
-
-        containers.forEach(container => {
-            const cards = container.querySelectorAll('.card');
-            const links = container.querySelectorAll('.card-link.silka');
-
-            links.forEach(link => {
-                link.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    const targetCardId = this.dataset.target;
-
-                    cards.forEach(card => {
-                        card.classList.add('hidden');
-                    });
-
-                    document.getElementById(targetCardId).classList.remove('hidden');
-                });
-            });
-
-            if (cards.length > 0) {
-                cards[0].classList.remove('hidden');
-            }
-        });
-    }
-
-    setupCarousel('.coffee-card-container');
-    setupCarousel('.cold-drinks-card-container');
-    setupCarousel('.tea-card-container');
-});
-/*_____________________________________________________________________________________________*/
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const testimonials = document.querySelectorAll('.testimonial');
-
-    function checkTestimonials() {
-        testimonials.forEach(testimonial => {
-            if (isElementInViewport(testimonial)) {
-                testimonial.classList.add('active'); 
-            }
-        });
-    }
-
-    function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
-
-    checkTestimonials();
-
-    window.addEventListener('scroll', checkTestimonials);
-});
-
-
-/*_____________________________________________________________________________________________*/
-document.addEventListener('DOMContentLoaded', function() {
-    const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
-
-    function checkElements() {
-        elementsToAnimate.forEach(element => {
-            if (isElementInViewport(element)) {
-                element.classList.add('active');
-            }
-        });
-    }
-
-    function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
-
-    
-    checkElements();
-
-  
-    window.addEventListener('scroll', checkElements);
-});
-
-
-
-
-/*_____________________________________________________________________________________________*/
+/*________________________________________Otzivi_____________________________________________________*/
 document.querySelectorAll('.carousel_otzivi').forEach(carousel => {
     let currentIndex = 0;
     const slides = carousel.querySelectorAll('.carousel_item_otziv');
@@ -275,5 +157,4 @@ document.querySelectorAll('.carousel_otzivi').forEach(carousel => {
         btn.onclick=()=>{let s=btn.nextElementSibling;s.textContent=+s.textContent+1}
     });
 });
-/*_____________________________________________________________________________________________*/
 

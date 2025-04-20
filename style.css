@@ -144,16 +144,16 @@ body{
 }
 
 /* Modal*/
-
-
-
-
-
-
-
-
-
-
+#showRegister{
+  color: #8b4513;
+}
+.voiti:hover{
+  background-color: #d4a762;
+}
+.voiti{
+  background-color: #a0522d;
+  color: white;
+}
 
 
 
@@ -364,7 +364,7 @@ button[ onclick="checkAnswer(0)"], button[ onclick="checkAnswer(1)"], button[ on
   font-family: "Ponomar", system-ui;
 }
 #loss h2{
-  color: rgba(94, 47, 21, 0.829);
+  color: white;
 }
 
 .igra{
@@ -544,7 +544,7 @@ margin-top: -10px;
 .baristablock{
   flex-wrap: wrap;
   margin: 100px auto;
-  width: 1680px;
+  width: 1500px;
   display: flex;
   justify-content: space-between;
 
@@ -617,8 +617,11 @@ margin-top: -10px;
 .blockotzix{
   display: flex;
   justify-content: space-between;
-  width: 1600px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 100px auto;
+  background-color: white;
+  height: 800px;
+
 }
 .carousel_otzivi {
   position: relative;
