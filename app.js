@@ -142,19 +142,180 @@ function winGame() {
 
 
 /*________________________________________Otzivi_____________________________________________________*/
-document.querySelectorAll('.carousel_otzivi').forEach(carousel => {
-    let currentIndex = 0;
-    const slides = carousel.querySelectorAll('.carousel_item_otziv');
-    const totalSlides = slides.length;
-    const inner = carousel.querySelector('.carousel_inner_otziv');
-    function showSlide(idx) {
-        currentIndex = (idx + totalSlides) % totalSlides;
-        inner.style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
+document.addEventListener('DOMContentLoaded', function() {
+    // Элементы управления
+    const tabs = document.querySelectorAll('.tab');
+    const reviewCategories = document.querySelectorAll('.review-category');
+    const prevBtns = document.querySelectorAll('.prev-btn');
+    const nextBtns = document.querySelectorAll('.next-btn');
+    const addReviewBtn = document.querySelector('.add-review-btn');
+    const reviewModal = document.getElementById('review-modal');
+    const cancelReviewBtn = document.getElementById('cancel-review');
+    const reviewForm = document.getElementById('review-form');
+    
+    // Текущее состояние
+    let currentCategory = 'coffee-shop';
+    let currentReviews = {};
+    
+    // Инициализация
+    function init() {
+        // Для каждой категории сохраняем отзывы и текущий индекс
+        reviewCategories.forEach(category => {
+            const categoryId = category.id.replace('-reviews', '');
+            currentReviews[categoryId] = {
+                reviews: Array.from(category.querySelectorAll('.review')),
+                currentIndex: 0
+            };
+            
+            // Показываем первый отзыв в категории
+            if (category.classList.contains('active')) {
+                showReview(categoryId, 0);
+            }
+        });
+        
+        // Проверяем, нужно ли отключать кнопки навигации
+        updateNavButtons();
     }
-    carousel.querySelector('.next').onclick = () => showSlide(currentIndex + 1);
-    carousel.querySelector('.prev').onclick = () => showSlide(currentIndex - 1);
-    carousel.querySelectorAll('.like-btn').forEach(btn=>{
-        btn.onclick=()=>{let s=btn.nextElementSibling;s.textContent=+s.textContent+1}
+    
+    // Показать конкретный отзыв
+    function showReview(category, index) {
+        const reviewsData = currentReviews[category];
+        if (!reviewsData || index < 0 || index >= reviewsData.reviews.length) return;
+        
+        // Скрываем все отзывы в категории
+        reviewsData.reviews.forEach(review => {
+            review.classList.remove('active');
+        });
+        
+        // Показываем выбранный
+        reviewsData.reviews[index].classList.add('active');
+        reviewsData.currentIndex = index;
+        
+        // Обновляем кнопки навигации
+        updateNavButtons();
+    }
+    
+    // Обновление состояния кнопок навигации
+    function updateNavButtons() {
+        const reviewsData = currentReviews[currentCategory];
+        if (!reviewsData) return;
+        
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        
+        prevBtn.disabled = reviewsData.currentIndex === 0;
+        nextBtn.disabled = reviewsData.currentIndex === reviewsData.reviews.length - 1;
+    }
+    
+    // Переключение категорий
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const category = this.dataset.category;
+            
+            // Обновляем активную вкладку
+            tabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Обновляем активную категорию отзывов
+            reviewCategories.forEach(cat => cat.classList.remove('active'));
+            document.getElementById(`${category}-reviews`).classList.add('active');
+            
+            // Обновляем текущую категорию
+            currentCategory = category;
+            
+            // Показываем первый отзыв в новой категории
+            showReview(category, 0);
+        });
     });
+    
+    // Навигация по отзывам
+    function setupCarouselNav() {
+        prevBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (this.disabled) return;
+                const reviewsData = currentReviews[currentCategory];
+                showReview(currentCategory, reviewsData.currentIndex - 1);
+            });
+        });
+        
+        nextBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (this.disabled) return;
+                const reviewsData = currentReviews[currentCategory];
+                showReview(currentCategory, reviewsData.currentIndex + 1);
+            });
+        });
+    }
+    
+    // Управление модальным окном
+    addReviewBtn.addEventListener('click', function() {
+        reviewModal.style.display = 'flex';
+    });
+    
+    cancelReviewBtn.addEventListener('click', function() {
+        reviewModal.style.display = 'none';
+    });
+    
+    // Закрытие модального окна при клике вне его
+    window.addEventListener('click', function(event) {
+        if (event.target === reviewModal) {
+            reviewModal.style.display = 'none';
+        }
+    });
+    
+    // Обработка формы отзыва
+    reviewForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('reviewer-name').value;
+        const category = document.getElementById('review-category').value;
+        const text = document.getElementById('review-text').value;
+        
+        // Создаем новый отзыв
+        const reviewElement = document.createElement('div');
+        reviewElement.className = 'review';
+        
+        const title = document.createElement('h3');
+        title.textContent = getRandomTitle(category);
+        
+        const content = document.createElement('p');
+        content.textContent = text;
+        
+        const author = document.createElement('p');
+        author.className = 'review-author';
+        author.textContent = `— ${name}`;
+        
+        reviewElement.appendChild(title);
+        reviewElement.appendChild(content);
+        reviewElement.appendChild(author);
+        
+        // Добавляем отзыв в соответствующую категорию
+        const categoryElement = document.getElementById(`${category}-reviews`);
+        categoryElement.appendChild(reviewElement);
+        
+        // Обновляем список отзывов в текущей категории
+        currentReviews[category].reviews.push(reviewElement);
+        
+        // Сбрасываем форму и закрываем модальное окно
+        reviewForm.reset();
+        reviewModal.style.display = 'none';
+        
+       
+    });
+    
+    // Генерация заголовков для отзывов
+    function getRandomTitle(category) {
+        const titles = {
+            'coffee-shop': ['Уютное место', 'Лучшая кофейня', 'Атмосферно', 'Приятная обстановка'],
+            'coffee': ['Вкуснейший кофе', 'Отличный выбор', 'Прекрасный аромат', 'Идеальный баланс'],
+            'staff': ['Внимательные бариста', 'Высокий уровень сервиса', 'Дружелюбный персонал', 'Профессионалы']
+        };
+        
+        const categoryTitles = titles[category] || ['Хорошее впечатление'];
+        return categoryTitles[Math.floor(Math.random() * categoryTitles.length)];
+    }
+    
+    // Инициализируем приложение
+    init();
+    setupCarouselNav();
 });
-
