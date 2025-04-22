@@ -1,34 +1,128 @@
 /*Навбар*/
-let lastScroll = 0;
-const navbar = document.querySelector('.navbar');
-const navbarHeight = navbar.offsetHeight;
 
-window.addEventListener('scroll', () => {
-  const currentScroll = window.pageYOffset;
+function setupNavbarScrollBehavior() {
+    let lastScroll = 0;
+    const navbar = document.querySelector('.navbar');
+    const navbarHeight = navbar.offsetHeight;
+    const scrollThreshold = 100; 
   
-  if (currentScroll <= navbarHeight) {
-    navbar.classList.remove('hide');
-    return;
-  }
-  
-  if (currentScroll > lastScroll && !navbar.classList.contains('hide')) {
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      
+     
+      if (currentScroll <= navbarHeight) {
+        navbar.classList.remove('navbar-hide');
+        return;
+      }
+      
     
-    navbar.classList.add('hide');
-  } else if (currentScroll < lastScroll && navbar.classList.contains('hide')) {
+      if (currentScroll > lastScroll && currentScroll > scrollThreshold) {
+        navbar.classList.add('navbar-hide');
+      } 
    
-    navbar.classList.remove('hide');
+      else if (currentScroll < lastScroll && navbar.classList.contains('navbar-hide')) {
+        navbar.classList.remove('navbar-hide');
+      }
+      
+      lastScroll = currentScroll;
+    });
   }
   
-  lastScroll = currentScroll;
-});
+  
+  function setupActiveLinks() {
+    const navLinks = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
+    const dropdownItems = document.querySelectorAll('.dropdown-item');
+    
+   
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+    
+    
+    dropdownItems.forEach(item => {
+      item.addEventListener('click', function() {
+        dropdownItems.forEach(i => i.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+    
 
+    window.addEventListener('scroll', () => {
+      const fromTop = window.scrollY + navbar.offsetHeight + 20;
+      
+      navLinks.forEach(link => {
+        const section = document.querySelector(link.getAttribute('href'));
+        
+        if (
+          section.offsetTop <= fromTop &&
+          section.offsetTop + section.offsetHeight > fromTop
+        ) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    });
+  }
 
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', function() {
-    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-    this.classList.add('active');
+  document.addEventListener('DOMContentLoaded', function() {
+    setupNavbarScrollBehavior();
+    setupActiveLinks();
+   
+    const currentPath = window.location.hash;
+    if (currentPath) {
+      const activeLink = document.querySelector(`.nav-link[href="${currentPath}"]`);
+      if (activeLink) {
+        activeLink.classList.add('active');
+      }
+    }
   });
-});
+
+const navbarStyles = `
+  .navbar-hide {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .navbar {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .nav-link.active,
+  .dropdown-item.active {
+    font-weight: 600;
+    position: relative;
+  }
+  
+  .nav-link.active:not(.dropdown-toggle)::after,
+  .dropdown-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 2px;
+
+  }
+  
+  .dropdown-item.active::after {
+    bottom: auto;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 3px;
+    height: 100%;
+  }
+`;
+
+
+const styleElement = document.createElement('style');
+styleElement.innerHTML = navbarStyles;
+document.head.appendChild(styleElement);  
 
 
 
@@ -40,27 +134,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const itemName = document.getElementById('item-name');
     const itemPrice = document.getElementById('item-price');
 
-    // Плавное появление элементов меню
     setTimeout(() => {
         document.querySelector('.box').style.opacity = '1';
     }, 100);
 
     menuItems.forEach(item => {
-        item.addEventListener('click', (event) => {
-            event.preventDefault(); 
+        item.addEventListener('click', (event) => { 
+           
+            selectedItemDiv.classList.remove('show');
+            
+            setTimeout(() => {
+                const itemNameValue = item.dataset.name;
+                const itemPriceValue = item.dataset.price;
+                const imageUrl = item.src;
 
-            const itemNameValue = item.dataset.name;
-            const itemPriceValue = item.dataset.price;
-            const imageUrl = item.src;
+                selectedImage.src = imageUrl;
+                itemName.textContent = itemNameValue;
+                itemPrice.textContent = `Цена: $${itemPriceValue}`;
 
-            selectedImage.src = imageUrl;
-            itemName.textContent = itemNameValue;
-            itemPrice.textContent = `Price: $${itemPriceValue}`;
-
-            // Плавное появление выбранного элемента
-            selectedItemDiv.classList.add('show');
-            selectedItemDiv.style.display = 'flex';
+               
+                selectedItemDiv.classList.add('show');
+            }, 300); 
         });
+    });
+      
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.menu-item') && !e.target.closest('.selected-item')) {
+            selectedItemDiv.classList.remove('show');
+        }
     });
 });
 
@@ -72,11 +173,28 @@ const questions = [
     { question: "Что из этого напиток?", answers: ["Личи", "Мокко", "Мандарин"], correct: 1 },
     { question: "Кофе c молоком?", answers: ["Латте", "Американо", "Эспрессо"], correct: 0 }
 ];
+
 let timer;
 let timeLeft = 60;
 let currentQuestionIndex = 0;
+let gameCompleted = false;
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    if(localStorage.getItem('gameCompleted') === 'true') {
+        disableGame();
+    }
+    
+    
+    document.getElementById('show-discount').addEventListener('click', showDiscountModal);
+    document.getElementById('close-modal-btn').addEventListener('click', closeDiscountModal);
+    document.querySelector('.close-modal').addEventListener('click', closeDiscountModal);
+});
 
 function startGame() {
+    if(gameCompleted) return;
+    
     document.getElementById("game").style.display = "block";
     document.getElementById("loss").style.display = "none";
     document.getElementById("win").style.display = "none";
@@ -90,6 +208,7 @@ function startGame() {
 
 function startTimer() {
     document.getElementById("timer-cup").textContent = "Осталось " + timeLeft + " ";
+    clearInterval(timer);
     timer = setInterval(() => {
         timeLeft--;
         document.getElementById("timer-cup").textContent = "Осталось " + timeLeft + " ";
@@ -125,25 +244,36 @@ function checkAnswer(answerIndex) {
     }
 }
 
-
 function gameOver() {
     document.getElementById("game").style.display = "none";
     document.getElementById("loss").style.display = "block";
-
 }
 
 function winGame() {
     document.getElementById("game").style.display = "none";
     document.getElementById("win").style.display = "block";
-
+    gameCompleted = true;
+    localStorage.setItem('gameCompleted', 'true');
 }
 
+function showDiscountModal() {
+    document.getElementById('discountModal').style.display = 'flex';
+}
 
+function closeDiscountModal() {
+    document.getElementById('discountModal').style.display = 'none';
+}
 
+function disableGame() {
+    gameCompleted = true;
+    document.querySelector(".start").style.display = "none";
+    document.querySelector(".igra").textContent = "Вы уже завершили игру";
+    document.querySelector(".zanovo").style.display = "none";
+}
 
 /*________________________________________Otzivi_____________________________________________________*/
 document.addEventListener('DOMContentLoaded', function() {
-    // Элементы управления
+   
     const tabs = document.querySelectorAll('.tab');
     const reviewCategories = document.querySelectorAll('.review-category');
     const prevBtns = document.querySelectorAll('.prev-btn');
@@ -153,13 +283,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const cancelReviewBtn = document.getElementById('cancel-review');
     const reviewForm = document.getElementById('review-form');
     
-    // Текущее состояние
+ 
     let currentCategory = 'coffee-shop';
     let currentReviews = {};
     
-    // Инициализация
+   
     function init() {
-        // Для каждой категории сохраняем отзывы и текущий индекс
+       
         reviewCategories.forEach(category => {
             const categoryId = category.id.replace('-reviews', '');
             currentReviews[categoryId] = {
@@ -167,35 +297,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 currentIndex: 0
             };
             
-            // Показываем первый отзыв в категории
+           
             if (category.classList.contains('active')) {
                 showReview(categoryId, 0);
             }
         });
         
-        // Проверяем, нужно ли отключать кнопки навигации
+       
         updateNavButtons();
     }
     
-    // Показать конкретный отзыв
+  
     function showReview(category, index) {
         const reviewsData = currentReviews[category];
         if (!reviewsData || index < 0 || index >= reviewsData.reviews.length) return;
         
-        // Скрываем все отзывы в категории
+      
         reviewsData.reviews.forEach(review => {
             review.classList.remove('active');
         });
         
-        // Показываем выбранный
+      
         reviewsData.reviews[index].classList.add('active');
         reviewsData.currentIndex = index;
         
-        // Обновляем кнопки навигации
+      
         updateNavButtons();
     }
     
-    // Обновление состояния кнопок навигации
+   
     function updateNavButtons() {
         const reviewsData = currentReviews[currentCategory];
         if (!reviewsData) return;
@@ -207,28 +337,27 @@ document.addEventListener('DOMContentLoaded', function() {
         nextBtn.disabled = reviewsData.currentIndex === reviewsData.reviews.length - 1;
     }
     
-    // Переключение категорий
+    
     tabs.forEach(tab => {
         tab.addEventListener('click', function() {
             const category = this.dataset.category;
             
-            // Обновляем активную вкладку
+            
             tabs.forEach(t => t.classList.remove('active'));
             this.classList.add('active');
             
-            // Обновляем активную категорию отзывов
+            
             reviewCategories.forEach(cat => cat.classList.remove('active'));
             document.getElementById(`${category}-reviews`).classList.add('active');
             
-            // Обновляем текущую категорию
+           
             currentCategory = category;
             
-            // Показываем первый отзыв в новой категории
             showReview(category, 0);
         });
     });
     
-    // Навигация по отзывам
+   
     function setupCarouselNav() {
         prevBtns.forEach(btn => {
             btn.addEventListener('click', function() {
@@ -247,7 +376,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Управление модальным окном
+   
     addReviewBtn.addEventListener('click', function() {
         reviewModal.style.display = 'flex';
     });
@@ -256,14 +385,14 @@ document.addEventListener('DOMContentLoaded', function() {
         reviewModal.style.display = 'none';
     });
     
-    // Закрытие модального окна при клике вне его
+    
     window.addEventListener('click', function(event) {
         if (event.target === reviewModal) {
             reviewModal.style.display = 'none';
         }
     });
     
-    // Обработка формы отзыва
+   
     reviewForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -271,7 +400,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const category = document.getElementById('review-category').value;
         const text = document.getElementById('review-text').value;
         
-        // Создаем новый отзыв
+      
         const reviewElement = document.createElement('div');
         reviewElement.className = 'review';
         
@@ -289,21 +418,21 @@ document.addEventListener('DOMContentLoaded', function() {
         reviewElement.appendChild(content);
         reviewElement.appendChild(author);
         
-        // Добавляем отзыв в соответствующую категорию
+       
         const categoryElement = document.getElementById(`${category}-reviews`);
         categoryElement.appendChild(reviewElement);
         
-        // Обновляем список отзывов в текущей категории
+        и
         currentReviews[category].reviews.push(reviewElement);
         
-        // Сбрасываем форму и закрываем модальное окно
+       
         reviewForm.reset();
         reviewModal.style.display = 'none';
         
        
     });
     
-    // Генерация заголовков для отзывов
+   
     function getRandomTitle(category) {
         const titles = {
             'coffee-shop': ['Уютное место', 'Лучшая кофейня', 'Атмосферно', 'Приятная обстановка'],
@@ -315,7 +444,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return categoryTitles[Math.floor(Math.random() * categoryTitles.length)];
     }
     
-    // Инициализируем приложение
     init();
     setupCarouselNav();
 });

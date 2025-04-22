@@ -22,35 +22,49 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg sticky-top fixed-top">
-        <div class="header">
-          <a class="navbar-brand" href="#">
-            <img class="logo" src="img/logotip.png" alt="Логотип">
-          </a>        
-          <button class="navbar-toggler order-first" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-            <div class="header navbar-nav">
-              <a class="nav-link hachi-maru-pop-regular" aria-current="page" href="#maen">Главная</a>
-              <a class="nav-link hachi-maru-pop-regular" href="#con">Меню</a>
-              <a class="nav-link hachi-maru-pop-regular" href="#baristablock">Команда</a>
-              <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle hachi-maru-pop-regular" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Дополнительные действия
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item hachi-maru-pop-regular" href="#footer">Написать нам</a></li>
-                  <li><a class="dropdown-item hachi-maru-pop-regular" href="#footer">Заказать доставку</a></li>
-                  <li><a class="dropdown-item hachi-maru-pop-regular" href="#footer">Оставить отзыв</a></li>
-                </ul>
-              </div>
-            </div>
+        <div class="container-fluid header">
+            <a class="navbar-brand" href="#">
+                <img class="logo" src="img/logotip.png" alt="Логотип">
+            </a>
             
-            <div class="profile-icon ms-auto">
-              <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#authModal">
-                <div class="profile-icon-wrapper">
-                    <i class="bi bi-person-square" data-bs-toggle="modal" data-bs-target="#authModal" style="font-size: 3rem;"></i>
+           
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+        
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link hachi-maru-pop-regular" href="#maen">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hachi-maru-pop-regular" href="#con">Меню</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hachi-maru-pop-regular" href="#baristablock">Команда</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle hachi-maru-pop-regular" href="#" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Дополнительные действия
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item hachi-maru-pop-regular" href="#footer">Написать нам</a></li>
+                            <li><a class="dropdown-item hachi-maru-pop-regular" href="#footer">Заказать доставку</a></li>
+                            <li><a class="dropdown-item hachi-maru-pop-regular" href="#footer">Оставить отзыв</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="d-flex profile-icon">
+                    <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#authModal">
+                        <div class="profile-icon-wrapper">
+                            <i class="bi bi-person-square" style="font-size: 2.1rem;"></i>
+                        </div>
+                    </a>
                 </div>
-              </a>
             </div>
         </div>
     </nav>
@@ -98,15 +112,14 @@
           </div>
         </div>
       </div>
-        
 
-   <main id="maen  vh-100">
-        <div class="right ">
-        <img  class="harry" src="img/harry-Photoroom.png" alt="">
+
+      <main id="maen">
+        <div class="right">
+            <img class="harry" src="img/harry-Photoroom.png" alt="Гарри - кофейный мастер">
         </div>
         <div class="left">
             <div id="container">
-            
                 <div id="coffee-steam">
                     <div class="steam" id="steam1"></div>
                     <div class="steam" id="steam2"></div>
@@ -133,37 +146,54 @@
                 </div>
                 <div id="win">
                     <h1>Поздравляем, вы можете продолжить</h1>
-                    <button class="vigrish"><a href="#con">Пройти Дальше</a></button>
+                    <button class="button vigrish" id="show-discount">Пройти Дальше</button>
                 </div>
             </div>  
+        </div>
+    </main>
+    
+    <!-- КУПОН -->
+    <div class="discount-modal" id="discountModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Поздравляем с победой!</h2>
+            <p>Вы выиграли специальную скидку на наш фирменный кофе!</p>
+            <div class="discount-code">COFFEEWIN20</div>
+            <p>Используйте этот код при оформлении заказа, чтобы получить скидку 20%</p>
+            <button class="button" id="close-modal-btn">Закрыть</button>
+        </div>
     </div>
-</main> 
+
    
 
-<div class="con" id="con">
-    <h1 class="hachi-maru-pop-regular" style="margin-top: -72px; font-size: 50px; ">Наше приворотное меню</h1>
-<div class="menu-container">
-<div class="menu">
-    <div class="box">
-     <span  ><img src="img/lati.png" alt="Latte" data-name="Latte" data-price="3.50" class="menu-item"></span>
-     <span style="--i:2;"><img src="img/latimatcha.png" alt="Latte Matcha" data-name="Latte Matcha" data-price="4.00" class="menu-item"></span>
-     <span style="--i:3;"><img src="img/coldcofe.png" alt="Cold Coffee" data-name="Cold Coffee" data-price="4.50" class="menu-item"></span>
-     <span style="--i:4;"><img src="img/limonad.png" alt="Lemonade" data-name="Lemonade" data-price="3.00" class="menu-item"></span>
-     <span style="--i:5;"><img src="img/zeleni.png" alt="Green Tea" data-name="Green Tea" data-price="3.00" class="menu-item"></span>
-     <span style="--i:6;"><img src="img/travinoi.png" alt="Herbal Tea" data-name="Herbal Tea" data-price="3.00" class="menu-item"></span>
-     <span style="--i:7;"><img src="img/limonad.png" alt="Espresso" data-name="Espresso" data-price="2.50" class="menu-item"></span>
-     <span style="--i:8;"><img src="img/zeleni.png" alt="Green Tea" data-name="Green Tea" data-price="3.00" class="menu-item"></span>
-     <span style="--i:9;"><img src="img/zeleni.png" alt="Green Tea" data-name="Green Tea" data-price="3.00" class="menu-item"></span>
-     <span style="--i:10;"><img src="img/zerno2.png" alt="Zerno Avstralia" data-name="Zerno Avstralia" data-price="3.00" class="menu-item"></span>
+    <div class="con" id="con">
+        <h1 class="hachi-maru-pop-regular menu-title">Наше приворотное меню</h1>
+        <div class="menu-container">
+            <div class="menu">
+                <div class="box">
+                    <span style="--i:1;"><img src="img/lati.png" alt="Latte" data-name="Latte" data-price="3.50" class="menu-item"></span>
+                    <span style="--i:2;"><img src="img/latimatcha.png" alt="Latte Matcha" data-name="Latte Matcha" data-price="4.00" class="menu-item"></span>
+                    <span style="--i:3;"><img src="img/coldcofe.png" alt="Cold Coffee" data-name="Cold Coffee" data-price="4.50" class="menu-item"></span>
+                    <span style="--i:4;"><img src="img/limonad.png" alt="Lemonade" data-name="Lemonade" data-price="3.00" class="menu-item"></span>
+                    <span style="--i:5;"><img src="img/zeleni.png" alt="Green Tea" data-name="Green Tea" data-price="3.00" class="menu-item"></span>
+                    <span style="--i:6;"><img src="img/travinoi.png" alt="Herbal Tea" data-name="Herbal Tea" data-price="3.00" class="menu-item"></span>
+                    <span style="--i:7;"><img src="img/limonad.png" alt="Espresso" data-name="Espresso" data-price="2.50" class="menu-item"></span>
+                    <span style="--i:8;"><img src="img/zeleni.png" alt="Green Tea" data-name="Green Tea" data-price="3.00" class="menu-item"></span>
+                    <span style="--i:9;"><img src="img/zeleni.png" alt="Green Tea" data-name="Green Tea" data-price="3.00" class="menu-item"></span>
+                    <span style="--i:10;"><img src="img/zerno2.png" alt="Zerno Avstralia" data-name="Zerno Avstralia" data-price="3.00" class="menu-item"></span>
+                </div>
+            </div>   
+            
+            <div id="selected-item" class="selected-item">
+                <div class="selected-content">
+                    <img id="selected-image" src="" alt="Selected Item" class="selected-img">
+                    <div class="reflection"></div>
+                    <h2 id="item-name" class="item-name"></h2>
+                    <p id="item-price" class="item-price"></p>
+                </div>
+            </div>
+        </div>
     </div>
-</div>   
-     <div id="selected-item" style="display: none;">
-         <img id="selected-image" src="" alt="Selected Item">
-         <h2 id="item-name"></h2>
-         <p id="item-price"></p>
-     </div>
- </div>
-</div>
 
  <h1 class="hachi-maru-pop-regular" style="text-align: center; font-size: 50px ;">Наша Команда бравых барист</h1>
 <div class="baristablock" id="baristablock">
@@ -205,7 +235,7 @@
 
 <div class="otziv">
 <div class="reviews-container">
-    <h1  class="hachi-maru-pop-regular" style=" font-size: 50px ;">Отзывы наших клиентов </h1>
+    <h1  style=" font-size: 50px ; color: azure;">Отзывы наших клиентов </h1>
     
     <div class="tabs">
         <button class="tab active" data-category="coffee-shop">О кофейне</button>
@@ -266,8 +296,8 @@
 </div>
 
 </div>
-<div class="modal" id="review-modal">
-    <div class="modal-content">
+<div class="modal1" id="review-modal">
+    <div class="modal1-content">
         <h2>Добавить отзыв</h2>
         <form id="review-form">
             <div class="form-group">
@@ -325,7 +355,7 @@
   </div>
 
   <div class="footer-bottom">
-      <p>&copy; 2024 Coffee Shop. All rights reserved.</p>
+      <p>&copy; 2025 Coffee Shop. All rights reserved.</p>
   </div>
 
   <div class="coffee-beans">
